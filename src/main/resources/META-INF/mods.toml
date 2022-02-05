@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="The Apache License, Version 2.0"
+issueTrackerURL=""
+
+[[mods]]
+modId="vanillaaiots"
+version="${file.jarVersion}"
+displayName="Vanilla AIOTs"
+displayURL=""
+authors=""
+description="""
+"""
+
+[[dependencies.vanillaaiots]]
+    modId="forge"
+    mandatory=true
+    versionRange="[39.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vanillaaiots]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.1,)"
+    ordering="NONE"
+    side="BOTH"
+
