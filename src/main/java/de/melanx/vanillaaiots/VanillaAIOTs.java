@@ -8,7 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
 
 @Mod("vanillaaiots")
 public final class VanillaAIOTs extends ModXRegistration {
@@ -17,9 +18,11 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     public VanillaAIOTs() {
         super(new CreativeModeTab("vanillaaiots") {
+
+            @Nonnull
             @Override
-            public @NotNull ItemStack makeIcon() {
-                return new ItemStack(AIOTRegistry.redstoneAiot);
+            public ItemStack makeIcon() {
+                return new ItemStack(AIOTRegistry.diamondAiot);
             }
         });
 
