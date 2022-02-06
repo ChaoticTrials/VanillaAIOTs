@@ -1,10 +1,12 @@
 package de.melanx.vanillaaiots.items;
 
+import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import de.melanx.vanillaaiots.util.ComponentUtil;
 import de.melanx.vanillaaiots.util.ToolUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -12,6 +14,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -34,10 +37,17 @@ import java.util.List;
 public class BaseAiot extends DiggerItem {
 
     private final ToolMaterials tier;
+    private final boolean isVanilla;
 
     public BaseAiot(float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Properties properties) {
         super(attackDamageModifier, attackSpeedModifier, tier, AIOTTags.MINEABLE_WITH_AIOT, properties);
         this.tier = tier;
+        this.isVanilla = tier == ToolMaterials.WOODEN
+                || tier == ToolMaterials.STONE
+                || tier == ToolMaterials.IRON
+                || tier == ToolMaterials.GOLDEN
+                || tier == ToolMaterials.DIAMOND
+                || tier == ToolMaterials.NETHERITE;
     }
 
     @Nonnull
@@ -108,6 +118,10 @@ public class BaseAiot extends DiggerItem {
         return this.tier;
     }
 
+    public boolean isVanilla() {
+        return this.isVanilla;
+    }
+
     @Override
     public float getDestroySpeed(@Nonnull ItemStack stack, @Nonnull BlockState state) {
         if (state.is(Tags.Blocks.OBSIDIAN)) {
@@ -125,8 +139,7 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        // TODO no knockback for slime
-        return super.canApplyAtEnchantingTable(stack, enchantment);
+        return (this.tier != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK) && super.canApplyAtEnchantingTable(stack, enchantment);
     }
 
     @Override
@@ -134,6 +147,15 @@ public class BaseAiot extends DiggerItem {
         // TODO LibCompat
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);
+    }
+
+    @Override
+    public void fillItemCategory(@Nonnull CreativeModeTab category, @Nonnull NonNullList<ItemStack> items) {
+        if (!this.isVanilla && ModConfig.vanillaOnly) {
+            return;
+        }
+
+        super.fillItemCategory(category, items);
     }
 
     private static void setHoemode(ItemStack stack, boolean b) {

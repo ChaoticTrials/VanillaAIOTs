@@ -1,10 +1,12 @@
 package de.melanx.vanillaaiots;
 
+import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.items.AIOTRegistry;
 import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
 import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -36,7 +38,7 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     @Override
     protected void setup(FMLCommonSetupEvent event) {
-
+        CraftingHelper.register(VanillaCondition.SERIALIZER);
     }
 
     @Override

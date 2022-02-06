@@ -19,5 +19,11 @@
   "item.vanillaaiots.prismarine_aiot": "Prismarin AIOT",
   "item.vanillaaiots.quartz_aiot": "Netherquartz AIOT",
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
-  "item.vanillaaiots.slime_aiot": "Schleim AIOT"
+  "item.vanillaaiots.slime_aiot": "Schleim AIOT",
+
+  "tooltip.vanillaaiots.toggleMode": "Modus",
+  "tooltip.vanillaaiots.pathMode": "%s erschaffen",
+  "tooltip.vanillaaiots.hoeMode": "Acker bestellen",
+
+  "tooltip.vanillaaiots.compat.mod_not_loaded": "Mod fehlt: %s"
 }

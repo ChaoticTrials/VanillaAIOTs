@@ -1,11 +1,13 @@
 package de.melanx.vanillaaiots.tools;
 
+import de.melanx.vanillaaiots.compat.ToolsCompat;
 import de.melanx.vanillaaiots.config.ConfigureableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import io.github.noeppi_noeppi.libx.util.LazyValue;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -22,26 +24,36 @@ public enum ToolMaterials implements Tier {
     IRON(ModConfig.ToolValues.iron, Tiers.IRON.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_IRON)),
     GOLDEN(ModConfig.ToolValues.gold, Tiers.GOLD.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_GOLD)),
     DIAMOND(ModConfig.ToolValues.diamond, Tiers.DIAMOND.getUses(), () -> Ingredient.of(Tags.Items.GEMS_DIAMOND)),
-    NETHERITE(ModConfig.ToolValues.netherite, Tiers.NETHERITE.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE));
+    NETHERITE(ModConfig.ToolValues.netherite, Tiers.NETHERITE.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)),
 
-//    BONE(ToolValueConfig.AIOTs.bone, () -> Ingredient.of(Tags.Items.BONES)),
-//    COAL(ToolValueConfig.AIOTs.coal, () -> Ingredient.of(Items.COAL)),
-//    EMERALD(ToolValueConfig.AIOTs.emerald, () -> Ingredient.of(Tags.Items.GEMS_EMERALD)),
-//    ENDER(ToolValueConfig.AIOTs.ender, () -> Ingredient.of(Tags.Items.ENDER_PEARLS)),
-//    FIERY(ToolValueConfig.AIOTs.fiery, () -> Ingredient.of(Items.MAGMA_BLOCK)),
-//    GLOWSTONE(ToolValueConfig.AIOTs.glowstone, () -> Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)),
-//    LAPIS(ToolValueConfig.AIOTs.lapis, () -> Ingredient.of(Tags.Items.GEMS_LAPIS)),
-//    NETHER(ToolValueConfig.AIOTs.nether, () -> Ingredient.of(Items.NETHER_BRICKS)),
-//    OBSIDIAN(ToolValueConfig.AIOTs.obsidian, () -> Ingredient.of(Tags.Items.OBSIDIAN)),
-//    PAPER(ToolValueConfig.AIOTs.paper, () -> Ingredient.of(Items.PAPER)),
-//    PRISMARINE(ToolValueConfig.AIOTs.prismarine, () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
-//    QUARTZ(ToolValueConfig.AIOTs.quartz, () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
-//    REDSTONE(ToolValueConfig.AIOTs.redstone, () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
-//    SLIME(ToolValueConfig.AIOTs.slime, () -> Ingredient.of(Tags.Items.SLIMEBALLS));
+    BONE(ModConfig.ToolValues.MoreVanillaTools.bone, () -> Ingredient.of(Tags.Items.BONES)),
+    COAL(ModConfig.ToolValues.MoreVanillaTools.coal, () -> Ingredient.of(Items.COAL)),
+    EMERALD(ModConfig.ToolValues.MoreVanillaTools.emerald, () -> Ingredient.of(Tags.Items.GEMS_EMERALD)),
+    ENDER(ModConfig.ToolValues.MoreVanillaTools.ender, () -> Ingredient.of(Tags.Items.ENDER_PEARLS)),
+    FIERY(ModConfig.ToolValues.MoreVanillaTools.fiery, () -> Ingredient.of(Items.MAGMA_BLOCK)),
+    GLOWSTONE(ModConfig.ToolValues.MoreVanillaTools.glowstone, () -> Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)),
+    LAPIS(ModConfig.ToolValues.MoreVanillaTools.lapis, () -> Ingredient.of(Tags.Items.GEMS_LAPIS)),
+    NETHER(ModConfig.ToolValues.MoreVanillaTools.nether, () -> Ingredient.of(Items.NETHER_BRICKS)),
+    OBSIDIAN(ModConfig.ToolValues.MoreVanillaTools.obsidian, () -> Ingredient.of(Tags.Items.OBSIDIAN)),
+    PAPER(ModConfig.ToolValues.MoreVanillaTools.paper, () -> Ingredient.of(Items.PAPER)),
+    PRISMARINE(ModConfig.ToolValues.MoreVanillaTools.prismarine, () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
+    QUARTZ(ModConfig.ToolValues.MoreVanillaTools.quartz, () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
+    REDSTONE(ModConfig.ToolValues.MoreVanillaTools.redstone, () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
+    SLIME(ModConfig.ToolValues.MoreVanillaTools.slime, () -> Ingredient.of(Tags.Items.SLIMEBALLS));
 
     private final ConfigureableMaterial material;
     private final int durability;
     private final LazyValue<Ingredient> repairIngredient;
+
+    ToolMaterials(ConfigureableMaterial material, Supplier<Ingredient> repairIngredient) {
+        int baseDurability = ToolsCompat.getDurabilityFor(material);
+        if (baseDurability < 0 && ToolsCompat.isMoreVanillaToolsLoaded()) {
+            throw new IllegalStateException("Invalid tier detected");
+        }
+        this.material = material;
+        this.durability = baseDurability * ModConfig.durabilityModifier;
+        this.repairIngredient = new LazyValue<>(repairIngredient);
+    }
 
     ToolMaterials(ConfigureableMaterial material, int baseDurability, Supplier<Ingredient> repairIngredient) {
         this.material = material;

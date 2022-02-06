@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "vanillaaiots",
+  "ingredients": [
+    {
+      "item": "morevanillatools:fiery_sword"
+    },
+    {
+      "item": "morevanillatools:fiery_pickaxe"
+    },
+    {
+      "item": "morevanillatools:fiery_axe"
+    },
+    {
+      "item": "morevanillatools:fiery_shovel"
+    },
+    {
+      "item": "morevanillatools:fiery_hoe"
+    }
+  ],
+  "result": {
+    "item": "vanillaaiots:fiery_aiot"
+  },
+  "conditions": [
+    {
+      "type": "morevanillalib:vanilla_only"
+    },
+    {
+      "modid": "morevanillatools",
+      "type": "forge:mod_loaded"
+    }
+  ]
+}

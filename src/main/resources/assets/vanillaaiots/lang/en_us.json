@@ -20,5 +20,11 @@
   "item.vanillaaiots.prismarine_aiot": "Prismarine AIOT",
   "item.vanillaaiots.quartz_aiot": "Quartz AIOT",
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
-  "item.vanillaaiots.slime_aiot": "Slime AIOT"
+  "item.vanillaaiots.slime_aiot": "Slime AIOT",
+
+  "tooltip.vanillaaiots.toggleMode": "Mode",
+  "tooltip.vanillaaiots.pathMode": "Create %s",
+  "tooltip.vanillaaiots.hoeMode": "Till soil",
+
+  "tooltip.vanillaaiots.compat.mod_not_loaded": "Mod missing: %s"
 }
