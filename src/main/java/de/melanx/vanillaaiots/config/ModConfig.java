@@ -36,7 +36,7 @@ public class ModConfig {
         @Config
         public static ConfigureableMaterial netherite = ConfigureableMaterial.of(Tiers.NETHERITE);
 
-        @Group
+        @Group("If you installed MoreVanillaTools later, please remove this whole section to generate proper values")
         public static class MoreVanillaTools {
 
             @Config

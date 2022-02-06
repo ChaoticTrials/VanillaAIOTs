@@ -1,11 +1,13 @@
 package de.melanx.vanillaaiots.items;
 
+import de.melanx.vanillaaiots.compat.LibCompat;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import de.melanx.vanillaaiots.util.ComponentUtil;
 import de.melanx.vanillaaiots.util.ToolUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -13,6 +15,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DiggerItem;
@@ -108,6 +111,28 @@ public class BaseAiot extends DiggerItem {
     }
 
     @Override
+    public boolean hurtEnemy(@Nonnull ItemStack stack, @Nonnull LivingEntity target, @Nonnull LivingEntity attacker) {
+        boolean result = super.hurtEnemy(stack, target, attacker);
+
+        if (LibCompat.isMoreVanillaLibLoaded()) {
+            LibCompat.onHurtEnemy(this, stack, target, attacker);
+        }
+
+        return result;
+    }
+
+    @Override
+    public boolean mineBlock(@Nonnull ItemStack stack, @Nonnull Level level, @Nonnull BlockState state, @Nonnull BlockPos pos, @Nonnull LivingEntity entityLiving) {
+        boolean result = super.mineBlock(stack, level, state, pos, entityLiving);
+
+        if (LibCompat.isMoreVanillaLibLoaded()) {
+            LibCompat.onMineBlock(this, stack, level, state, pos, entityLiving);
+        }
+
+        return result;
+    }
+
+    @Override
     public int getBurnTime(@Nonnull ItemStack stack, @Nullable RecipeType<?> recipeType) {
         return this.tier == ToolMaterials.WOODEN ? 400 : 0;
     }
@@ -144,7 +169,9 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
-        // TODO LibCompat
+        if (LibCompat.isMoreVanillaLibLoaded()) {
+            LibCompat.editHoverText(this, stack, level, tooltip, isAdvanced);
+        }
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);
     }

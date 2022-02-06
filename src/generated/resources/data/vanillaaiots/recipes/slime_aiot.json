@@ -23,7 +23,7 @@
   },
   "conditions": [
     {
-      "type": "morevanillalib:vanilla_only"
+      "type": "vanillaaiots:vanilla_only"
     },
     {
       "modid": "morevanillatools",
