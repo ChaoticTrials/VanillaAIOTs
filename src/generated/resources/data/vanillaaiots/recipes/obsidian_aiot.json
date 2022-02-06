@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "vanillaaiots",
+  "ingredients": [
+    {
+      "item": "morevanillatools:obsidian_sword"
+    },
+    {
+      "item": "morevanillatools:obsidian_pickaxe"
+    },
+    {
+      "item": "morevanillatools:obsidian_axe"
+    },
+    {
+      "item": "morevanillatools:obsidian_shovel"
+    },
+    {
+      "item": "morevanillatools:obsidian_hoe"
+    }
+  ],
+  "result": {
+    "item": "vanillaaiots:obsidian_aiot"
+  },
+  "conditions": [
+    {
+      "type": "morevanillalib:vanilla_only"
+    },
+    {
+      "modid": "morevanillatools",
+      "type": "forge:mod_loaded"
+    }
+  ]
+}

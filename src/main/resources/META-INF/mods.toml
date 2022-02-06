@@ -1,21 +1,36 @@
 modLoader="javafml"
 loaderVersion="[39,)"
 license="The Apache License, Version 2.0"
-issueTrackerURL=""
+issueTrackerURL="https://github.com/MelanX/VanillaAIOTs/blob/1.18.x/src/main/resources/META-INF/mods.toml"
 
 [[mods]]
 modId="vanillaaiots"
 version="${file.jarVersion}"
 displayName="Vanilla AIOTs"
-displayURL=""
-authors=""
+updateJSONURL="https://assets.melanx.de/updates/vanilla-hammers-forge.json"
+authors="MelanX"
 description="""
+Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
 """
 
 [[dependencies.vanillaaiots]]
     modId="forge"
     mandatory=true
     versionRange="[39.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vanillahammers]]
+    modId="morevanillalib"
+    mandatory=true
+    versionRange="[1.18.1-3.0.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vanillahammers]]
+    modId="libx"
+    mandatory=true
+    versionRange="[1.18.1-3.1.0,)"
     ordering="NONE"
     side="BOTH"
 

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "vanillaaiots",
+  "ingredients": [
+    {
+      "item": "morevanillatools:glowstone_sword"
+    },
+    {
+      "item": "morevanillatools:glowstone_pickaxe"
+    },
+    {
+      "item": "morevanillatools:glowstone_axe"
+    },
+    {
+      "item": "morevanillatools:glowstone_shovel"
+    },
+    {
+      "item": "morevanillatools:glowstone_hoe"
+    }
+  ],
+  "result": {
+    "item": "vanillaaiots:glowstone_aiot"
+  },
+  "conditions": [
+    {
+      "type": "morevanillalib:vanilla_only"
+    },
+    {
+      "modid": "morevanillatools",
+      "type": "forge:mod_loaded"
+    }
+  ]
+}

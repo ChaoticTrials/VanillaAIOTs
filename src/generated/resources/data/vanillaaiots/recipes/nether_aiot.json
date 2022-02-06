@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "vanillaaiots",
+  "ingredients": [
+    {
+      "item": "morevanillatools:nether_sword"
+    },
+    {
+      "item": "morevanillatools:nether_pickaxe"
+    },
+    {
+      "item": "morevanillatools:nether_axe"
+    },
+    {
+      "item": "morevanillatools:nether_shovel"
+    },
+    {
+      "item": "morevanillatools:nether_hoe"
+    }
+  ],
+  "result": {
+    "item": "vanillaaiots:nether_aiot"
+  },
+  "conditions": [
+    {
+      "type": "morevanillalib:vanilla_only"
+    },
+    {
+      "modid": "morevanillatools",
+      "type": "forge:mod_loaded"
+    }
+  ]
+}
