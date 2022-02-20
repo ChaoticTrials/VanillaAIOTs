@@ -26,31 +26,31 @@ public enum ToolMaterials implements Tier {
     DIAMOND(ModConfig.ToolValues.diamond, Tiers.DIAMOND.getUses(), () -> Ingredient.of(Tags.Items.GEMS_DIAMOND)),
     NETHERITE(ModConfig.ToolValues.netherite, Tiers.NETHERITE.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)),
 
-    BONE(ModConfig.ToolValues.MoreVanillaTools.bone, () -> Ingredient.of(Tags.Items.BONES)),
-    COAL(ModConfig.ToolValues.MoreVanillaTools.coal, () -> Ingredient.of(Items.COAL)),
-    EMERALD(ModConfig.ToolValues.MoreVanillaTools.emerald, () -> Ingredient.of(Tags.Items.GEMS_EMERALD)),
-    ENDER(ModConfig.ToolValues.MoreVanillaTools.ender, () -> Ingredient.of(Tags.Items.ENDER_PEARLS)),
-    FIERY(ModConfig.ToolValues.MoreVanillaTools.fiery, () -> Ingredient.of(Items.MAGMA_BLOCK)),
-    GLOWSTONE(ModConfig.ToolValues.MoreVanillaTools.glowstone, () -> Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)),
-    LAPIS(ModConfig.ToolValues.MoreVanillaTools.lapis, () -> Ingredient.of(Tags.Items.GEMS_LAPIS)),
-    NETHER(ModConfig.ToolValues.MoreVanillaTools.nether, () -> Ingredient.of(Items.NETHER_BRICKS)),
-    OBSIDIAN(ModConfig.ToolValues.MoreVanillaTools.obsidian, () -> Ingredient.of(Tags.Items.OBSIDIAN)),
-    PAPER(ModConfig.ToolValues.MoreVanillaTools.paper, () -> Ingredient.of(Items.PAPER)),
-    PRISMARINE(ModConfig.ToolValues.MoreVanillaTools.prismarine, () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
-    QUARTZ(ModConfig.ToolValues.MoreVanillaTools.quartz, () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
-    REDSTONE(ModConfig.ToolValues.MoreVanillaTools.redstone, () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
-    SLIME(ModConfig.ToolValues.MoreVanillaTools.slime, () -> Ingredient.of(Tags.Items.SLIMEBALLS));
+    BONE("bone", () -> Ingredient.of(Tags.Items.BONES)),
+    COAL("coal", () -> Ingredient.of(Items.COAL)),
+    EMERALD("emerald", () -> Ingredient.of(Tags.Items.GEMS_EMERALD)),
+    ENDER("ender", () -> Ingredient.of(Tags.Items.ENDER_PEARLS)),
+    FIERY("fiery", () -> Ingredient.of(Items.MAGMA_BLOCK)),
+    GLOWSTONE("glowstone", () -> Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)),
+    LAPIS("lapis", () -> Ingredient.of(Tags.Items.GEMS_LAPIS)),
+    NETHER("nether", () -> Ingredient.of(Items.NETHER_BRICKS)),
+    OBSIDIAN("obsidian", () -> Ingredient.of(Tags.Items.OBSIDIAN)),
+    PAPER("paper", () -> Ingredient.of(Items.PAPER)),
+    PRISMARINE("prismarine", () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
+    QUARTZ("quartz", () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
+    REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
+    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS));
 
     private final ConfigureableMaterial material;
     private final int durability;
     private final LazyValue<Ingredient> repairIngredient;
 
-    ToolMaterials(ConfigureableMaterial material, Supplier<Ingredient> repairIngredient) {
+    ToolMaterials(String material, Supplier<Ingredient> repairIngredient) {
         int baseDurability = ToolsCompat.getDurabilityFor(material);
         if (baseDurability < 0 && ToolsCompat.isMoreVanillaToolsLoaded()) {
             throw new IllegalStateException("Invalid tier detected");
         }
-        this.material = material;
+        this.material = ConfigureableMaterial.of(ToolsCompat.getTierFor(material));
         this.durability = baseDurability * ModConfig.durabilityModifier;
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }

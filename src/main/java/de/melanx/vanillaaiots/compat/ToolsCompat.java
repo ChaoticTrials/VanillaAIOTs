@@ -1,8 +1,6 @@
 package de.melanx.vanillaaiots.compat;
 
 import de.melanx.morevanillalib.api.normal.ToolMaterials;
-import de.melanx.vanillaaiots.config.ConfigureableMaterial;
-import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
 import net.minecraft.world.item.Item;
@@ -45,71 +43,7 @@ public class ToolsCompat {
         };
     }
 
-    public static Tier getTierFor(ConfigureableMaterial tier) {
-        if (!ToolsCompat.isMoreVanillaToolsLoaded()) {
-            return DummyItem.DUMMY_TIER;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.bone == tier) {
-            return ToolMaterials.BONE;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.coal == tier) {
-            return ToolMaterials.COAL;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.emerald == tier) {
-            return ToolMaterials.EMERALD;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.ender == tier) {
-            return ToolMaterials.ENDER;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.fiery == tier) {
-            return ToolMaterials.FIERY;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.glowstone == tier) {
-            return ToolMaterials.GLOWSTONE;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.lapis == tier) {
-            return ToolMaterials.LAPIS;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.nether == tier) {
-            return ToolMaterials.NETHER;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.obsidian == tier) {
-            return ToolMaterials.OBSIDIAN;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.paper == tier) {
-            return ToolMaterials.PAPER;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.prismarine == tier) {
-            return ToolMaterials.PRISMARINE;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.quartz == tier) {
-            return ToolMaterials.QUARTZ;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.redstone == tier) {
-            return ToolMaterials.REDSTONE;
-        }
-
-        if (ModConfig.ToolValues.MoreVanillaTools.slime == tier) {
-            return ToolMaterials.SLIME;
-        }
-
-        return DummyItem.DUMMY_TIER;
-    }
-
-    public static int getDurabilityFor(ConfigureableMaterial tier) {
+    public static int getDurabilityFor(String tier) {
         Tier compat = ToolsCompat.getTierFor(tier);
 
         return compat.getUses();
