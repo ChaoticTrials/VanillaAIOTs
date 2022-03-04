@@ -25,14 +25,14 @@ public class LibCompat {
     public static final String MODID = "morevanillalib";
 
     public static void onHurtEnemy(Item item, ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (!target.level.isClientSide && ModTags.Items.PAPER_TOOLS.contains(item) && FeatureConfig.PaperDamage.enabled
+        if (!target.level.isClientSide && stack.is(ModTags.Items.PAPER_TOOLS) && FeatureConfig.PaperDamage.enabled
                 && target.level.random.nextDouble() < FeatureConfig.PaperDamage.chance) {
             ToolUtil.paperDamage(attacker);
         }
     }
 
     public static void onMineBlock(Item item, ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity entityLiving) {
-        if (!level.isClientSide && state.getDestroySpeed(level, pos) != 0.0F && ModTags.Items.PAPER_TOOLS.contains(item)
+        if (!level.isClientSide && state.getDestroySpeed(level, pos) != 0.0F && stack.is(ModTags.Items.PAPER_TOOLS)
                 && FeatureConfig.PaperDamage.enabled && level.random.nextDouble() < FeatureConfig.PaperDamage.chance) {
             ToolUtil.paperDamage(entityLiving);
         }

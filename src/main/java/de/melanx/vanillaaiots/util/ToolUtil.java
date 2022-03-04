@@ -96,6 +96,7 @@ public class ToolUtil {
         if (block == Blocks.ROOTED_DIRT) {
             return Blocks.DIRT.defaultBlockState();
         }
+
         if (context.getClickedFace() != Direction.DOWN && context.getLevel().getBlockState(context.getClickedPos().above()).isAir()) {
             if (block == Blocks.GRASS_BLOCK || block == Blocks.DIRT_PATH || block == Blocks.DIRT) {
                 return Blocks.FARMLAND.defaultBlockState();

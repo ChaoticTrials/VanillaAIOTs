@@ -6,7 +6,7 @@ import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import io.github.noeppi_noeppi.libx.util.LazyValue;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -93,7 +93,7 @@ public enum ToolMaterials implements Tier {
     }
 
     @Override
-    public Tag<Block> getTag() {
+    public TagKey<Block> getTag() {
         return AIOTTags.MINEABLE_WITH_AIOT;
     }
 }

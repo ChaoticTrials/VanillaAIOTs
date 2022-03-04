@@ -154,6 +154,10 @@ public class BaseAiot extends DiggerItem {
             return 5.0F * efficiencyLevel + 1;
         }
 
+        if (state.is(Blocks.COBWEB)) {
+            return 15.0F;
+        }
+
         return super.getDestroySpeed(stack, state);
     }
 

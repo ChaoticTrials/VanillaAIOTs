@@ -7,8 +7,9 @@ import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
 import io.github.noeppi_noeppi.libx.data.provider.CommonTagsProviderBase;
 import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -16,7 +17,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 @Datagen
 public class AIOTTags extends CommonTagsProviderBase {
 
-    public static final Tag.Named<Block> MINEABLE_WITH_AIOT = BlockTags.bind("forge:mineable/aiot");
+    public static final TagKey<Block> MINEABLE_WITH_AIOT = BlockTags.create(new ResourceLocation("forge", "mineable/aiot"));
 
     public AIOTTags(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
         super(mod, generator, fileHelper);
