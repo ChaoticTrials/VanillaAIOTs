@@ -24,7 +24,7 @@ Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
     modId="libx"
     mandatory=true
     versionRange="[1.18.2-3.2.0,)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]
