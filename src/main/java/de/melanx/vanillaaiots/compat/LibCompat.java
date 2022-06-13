@@ -5,17 +5,21 @@ import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.morevanillalib.util.ComponentUtil;
 import de.melanx.morevanillalib.util.ToolUtil;
 import de.melanx.vanillaaiots.items.BaseAiot;
+import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.fml.ModList;
 
 import java.util.List;
@@ -43,6 +47,35 @@ public class LibCompat {
         if (!level.isClientSide && state.getDestroySpeed(level, pos) != 0.0F && stack.is(ModTags.Items.PAPER_TOOLS)
                 && FeatureConfig.PaperDamage.enabled && level.random.nextDouble() < FeatureConfig.PaperDamage.chance) {
             ToolUtil.paperDamage(entityLiving);
+        }
+    }
+
+    public static void onLivingDamageEvent(Player player, LivingDamageEvent event) {
+        Item heldItem = player.getMainHandItem().getItem();
+        ToolMaterials toolType = heldItem instanceof BaseAiot item ? item.getTier() : null;
+        if (toolType != null) {
+            LivingEntity entity = event.getEntityLiving();
+            if (toolType == ToolMaterials.BONE) {
+                if (entity instanceof AbstractSkeleton) {
+                    ToolUtil.moreDamage(event);
+                }
+            } else if (toolType == ToolMaterials.ENDER) {
+                if (entity instanceof EnderMan || entity instanceof Endermite) {
+                    ToolUtil.moreDamage(event);
+                }
+            } else if (toolType == ToolMaterials.FIERY) {
+                if (entity instanceof MagmaCube) {
+                    ToolUtil.moreDamage(event);
+                }
+            } else if (toolType == ToolMaterials.PRISMARINE) {
+                if (entity instanceof Guardian) {
+                    ToolUtil.moreDamage(event);
+                }
+            } else if (toolType == ToolMaterials.SLIME) {
+                if (entity instanceof Slime && !(entity instanceof MagmaCube)) {
+                    ToolUtil.moreDamage(event);
+                }
+            }
         }
     }
 
