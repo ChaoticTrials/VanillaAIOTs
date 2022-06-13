@@ -63,24 +63,28 @@ public class BaseAiot extends DiggerItem {
         ItemStack item = context.getItemInHand();
         boolean hoemode = isHoemode(item);
 
-        InteractionResult axeResult = InteractionResult.PASS;
+        InteractionResult result = InteractionResult.PASS;
         for (ToolAction action : ToolActions.DEFAULT_AXE_ACTIONS) {
-            if (axeResult != InteractionResult.PASS) {
+            if (result != InteractionResult.PASS) {
                 break;
             }
 
-            axeResult = ToolUtil.toolUse(context, action);
+            result = ToolUtil.toolUse(context, action);
         }
 
-        if (axeResult == InteractionResult.PASS) {
+        if (result == InteractionResult.PASS) {
             if (hoemode) {
-                return ToolUtil.toolUse(context, ToolUtil.HOE_TILL);
+                result = ToolUtil.toolUse(context, ToolUtil.HOE_TILL);
             } else {
-                return ToolUtil.toolUse(context, ToolActions.SHOVEL_FLATTEN);
+                result = ToolUtil.toolUse(context, ToolActions.SHOVEL_FLATTEN);
             }
         }
 
-        return axeResult;
+        if (LibCompat.isMoreVanillaLibLoaded()) {
+            LibCompat.onUseOn(this, context);
+        }
+
+        return result;
     }
 
     @Nonnull

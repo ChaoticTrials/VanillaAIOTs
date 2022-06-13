@@ -13,6 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fml.ModList;
@@ -28,6 +29,13 @@ public class LibCompat {
         if (!target.level.isClientSide && stack.is(ModTags.Items.PAPER_TOOLS) && FeatureConfig.PaperDamage.enabled
                 && target.level.random.nextDouble() < FeatureConfig.PaperDamage.chance) {
             ToolUtil.paperDamage(attacker);
+        }
+    }
+
+    public static void onUseOn(Item item, UseOnContext context) {
+        if (context.getPlayer() != null && context.getPlayer().level.isClientSide && context.getItemInHand().is(ModTags.Items.PAPER_TOOLS)
+                && FeatureConfig.PaperDamage.enabled && context.getPlayer().level.random.nextDouble() < FeatureConfig.PaperDamage.chance) {
+            ToolUtil.paperDamage(context.getPlayer());
         }
     }
 
