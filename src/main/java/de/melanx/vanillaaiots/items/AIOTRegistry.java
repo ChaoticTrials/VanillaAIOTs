@@ -3,10 +3,10 @@ package de.melanx.vanillaaiots.items;
 import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.compat.ToolsCompat;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
-import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 import net.minecraft.world.item.Item;
+import org.moddingx.libx.annotation.registration.RegisterClass;
 
-@RegisterClass
+@RegisterClass(registry = "ITEM_REGISTRY")
 public class AIOTRegistry {
 
     @SuppressWarnings("ConstantConditions")

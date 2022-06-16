@@ -16,7 +16,7 @@ public class VanillaCondition implements ICondition {
     }
 
     @Override
-    public boolean test() {
+    public boolean test(IContext context) {
         return !ModConfig.vanillaOnly;
     }
 

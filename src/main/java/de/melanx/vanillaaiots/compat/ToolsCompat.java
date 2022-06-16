@@ -1,6 +1,6 @@
 package de.melanx.vanillaaiots.compat;
 
-import de.melanx.morevanillalib.api.normal.ToolMaterials;
+import de.melanx.MoreVanillaTools.items.ToolMaterials;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
 import net.minecraft.world.item.Item;

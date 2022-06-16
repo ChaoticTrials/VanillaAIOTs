@@ -3,9 +3,6 @@ package de.melanx.vanillaaiots.data;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
-import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
-import io.github.noeppi_noeppi.libx.data.provider.CommonTagsProviderBase;
-import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -13,6 +10,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.provider.CommonTagsProviderBase;
+import org.moddingx.libx.mod.ModX;
 
 @Datagen
 public class AIOTTags extends CommonTagsProviderBase {

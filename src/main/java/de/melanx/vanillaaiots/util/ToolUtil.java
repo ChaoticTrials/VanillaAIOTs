@@ -45,7 +45,7 @@ public class ToolUtil {
                 && ((side != Direction.DOWN && level.isEmptyBlock(pos.above())) || AXE_STRIP == toolAction)) {
 
             BlockState state = level.getBlockState(pos);
-            BlockState modifiedState = state.getToolModifiedState(level, pos, player, stack, toolAction);
+            BlockState modifiedState = state.getToolModifiedState(context, toolAction, false);
             if (toolAction == HOE_TILL) {
                 modifiedState = ToolUtil.getHoeTillingState(state, context);
                 if (state.getBlock() == Blocks.ROOTED_DIRT) {

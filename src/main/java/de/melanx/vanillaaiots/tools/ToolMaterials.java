@@ -4,7 +4,6 @@ import de.melanx.vanillaaiots.compat.ToolsCompat;
 import de.melanx.vanillaaiots.config.ConfigureableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
-import io.github.noeppi_noeppi.libx.util.LazyValue;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
@@ -13,6 +12,7 @@ import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+import org.moddingx.libx.util.lazy.LazyValue;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;

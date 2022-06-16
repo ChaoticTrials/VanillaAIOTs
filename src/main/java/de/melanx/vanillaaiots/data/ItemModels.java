@@ -1,12 +1,12 @@
 package de.melanx.vanillaaiots.data;
 
-import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
-import io.github.noeppi_noeppi.libx.data.provider.ItemModelProviderBase;
-import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.provider.ItemModelProviderBase;
+import org.moddingx.libx.mod.ModX;
 
 @Datagen
 public class ItemModels extends ItemModelProviderBase {

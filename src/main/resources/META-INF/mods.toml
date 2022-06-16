@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[41,)"
 license="The Apache License, Version 2.0"
 issueTrackerURL="https://github.com/MelanX/VanillaAIOTs/issues"
 
@@ -16,34 +16,34 @@ Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
 [[dependencies.vanillaaiots]]
     modId="forge"
     mandatory=true
-    versionRange="[40.0,)"
+    versionRange="[41.0.35,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]
     modId="libx"
     mandatory=true
-    versionRange="[1.18.2-3.2.0,)"
+    versionRange="[1.19-4.0.1,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,)"
+    versionRange="[1.19, 1.20)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]
     modId="morevanillatools"
     mandatory=false
-    versionRange="[1.18.2-4.1.0,)"
+    versionRange="[1.19-5.0.1,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]
     modId="morevanillalib"
     mandatory=false
-    versionRange="[1.18.2-3.1.0,)"
+    versionRange="[1.19-4.0.0,)"
     ordering="NONE"
     side="BOTH"
