@@ -169,6 +169,15 @@ public class BaseAiot extends DiggerItem {
         stack.getOrCreateTag().putBoolean("hoemode", b);
     }
 
+    @Override
+    public int getEnchantmentLevel(ItemStack stack, Enchantment enchantment) {
+        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseAiot item && item.tier == ToolMaterials.SLIME) {
+            return 3;
+        }
+
+        return super.getEnchantmentLevel(stack, enchantment);
+    }
+
     private static boolean isHoemode(ItemStack stack) {
         return stack.isEmpty() || !stack.getOrCreateTag().contains("hoemode") || stack.getOrCreateTag().getBoolean("hoemode");
     }
