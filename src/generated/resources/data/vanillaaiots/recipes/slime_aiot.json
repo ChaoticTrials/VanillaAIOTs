@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:slime_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:slime_sword"
+          },
+          {
+            "item": "morevanillatools:slime_pickaxe"
+          },
+          {
+            "item": "morevanillatools:slime_axe"
+          },
+          {
+            "item": "morevanillatools:slime_shovel"
+          },
+          {
+            "item": "morevanillatools:slime_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:slime_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:slime_pickaxe"
-    },
-    {
-      "item": "morevanillatools:slime_axe"
-    },
-    {
-      "item": "morevanillatools:slime_shovel"
-    },
-    {
-      "item": "morevanillatools:slime_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:slime_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

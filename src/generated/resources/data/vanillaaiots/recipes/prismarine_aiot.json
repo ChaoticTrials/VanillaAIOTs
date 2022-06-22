@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:prismarine_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:prismarine_sword"
+          },
+          {
+            "item": "morevanillatools:prismarine_pickaxe"
+          },
+          {
+            "item": "morevanillatools:prismarine_axe"
+          },
+          {
+            "item": "morevanillatools:prismarine_shovel"
+          },
+          {
+            "item": "morevanillatools:prismarine_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:prismarine_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:prismarine_pickaxe"
-    },
-    {
-      "item": "morevanillatools:prismarine_axe"
-    },
-    {
-      "item": "morevanillatools:prismarine_shovel"
-    },
-    {
-      "item": "morevanillatools:prismarine_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:prismarine_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

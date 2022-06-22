@@ -29,6 +29,7 @@ public final class VanillaAIOTs extends ModXRegistration {
         });
 
         instance = this;
+        CraftingHelper.register(VanillaCondition.SERIALIZER);
     }
 
     @Override
@@ -38,7 +39,7 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     @Override
     protected void setup(FMLCommonSetupEvent event) {
-        CraftingHelper.register(VanillaCondition.SERIALIZER);
+
     }
 
     @Override

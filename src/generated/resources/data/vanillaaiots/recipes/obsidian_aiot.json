@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:obsidian_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:obsidian_sword"
+          },
+          {
+            "item": "morevanillatools:obsidian_pickaxe"
+          },
+          {
+            "item": "morevanillatools:obsidian_axe"
+          },
+          {
+            "item": "morevanillatools:obsidian_shovel"
+          },
+          {
+            "item": "morevanillatools:obsidian_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:obsidian_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:obsidian_pickaxe"
-    },
-    {
-      "item": "morevanillatools:obsidian_axe"
-    },
-    {
-      "item": "morevanillatools:obsidian_shovel"
-    },
-    {
-      "item": "morevanillatools:obsidian_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:obsidian_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:lapis_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:lapis_sword"
+          },
+          {
+            "item": "morevanillatools:lapis_pickaxe"
+          },
+          {
+            "item": "morevanillatools:lapis_axe"
+          },
+          {
+            "item": "morevanillatools:lapis_shovel"
+          },
+          {
+            "item": "morevanillatools:lapis_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:lapis_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:lapis_pickaxe"
-    },
-    {
-      "item": "morevanillatools:lapis_axe"
-    },
-    {
-      "item": "morevanillatools:lapis_shovel"
-    },
-    {
-      "item": "morevanillatools:lapis_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:lapis_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

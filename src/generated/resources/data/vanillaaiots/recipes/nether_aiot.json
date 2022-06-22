@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:nether_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:nether_sword"
+          },
+          {
+            "item": "morevanillatools:nether_pickaxe"
+          },
+          {
+            "item": "morevanillatools:nether_axe"
+          },
+          {
+            "item": "morevanillatools:nether_shovel"
+          },
+          {
+            "item": "morevanillatools:nether_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:nether_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:nether_pickaxe"
-    },
-    {
-      "item": "morevanillatools:nether_axe"
-    },
-    {
-      "item": "morevanillatools:nether_shovel"
-    },
-    {
-      "item": "morevanillatools:nether_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:nether_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

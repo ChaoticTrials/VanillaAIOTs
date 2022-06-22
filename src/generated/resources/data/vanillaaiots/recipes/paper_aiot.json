@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:paper_sword"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:paper_sword"
+          },
+          {
+            "item": "morevanillatools:paper_pickaxe"
+          },
+          {
+            "item": "morevanillatools:paper_axe"
+          },
+          {
+            "item": "morevanillatools:paper_shovel"
+          },
+          {
+            "item": "morevanillatools:paper_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:paper_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:paper_pickaxe"
-    },
-    {
-      "item": "morevanillatools:paper_axe"
-    },
-    {
-      "item": "morevanillatools:paper_shovel"
-    },
-    {
-      "item": "morevanillatools:paper_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:paper_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

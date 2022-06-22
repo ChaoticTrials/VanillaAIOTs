@@ -5,6 +5,7 @@ import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.items.AIOTRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.moddingx.libx.annotation.data.Datagen;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
@@ -39,6 +40,6 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
 
     @Override
     protected List<ICondition> conditions() {
-        return List.of(new VanillaCondition());
+        return List.of(new ModLoadedCondition("morevanillatools"), new VanillaCondition());
     }
 }
