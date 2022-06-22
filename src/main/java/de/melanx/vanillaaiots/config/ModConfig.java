@@ -4,6 +4,7 @@ import net.minecraft.world.item.Tiers;
 import org.moddingx.libx.annotation.config.RegisterConfig;
 import org.moddingx.libx.config.Config;
 import org.moddingx.libx.config.Group;
+import org.moddingx.libx.config.validate.FloatRange;
 
 @RegisterConfig
 public class ModConfig {
@@ -12,7 +13,8 @@ public class ModConfig {
     public static boolean vanillaOnly = false;
 
     @Config({"Multiplier to calculate the durability", "Single tool durability * this value = durability"})
-    public static int durabilityModifier = 5;
+    @FloatRange(min = 0, max = 10)
+    public static float durabilityModifier = 2.4f;
 
     @Group
     public static class ToolValues {

@@ -51,13 +51,13 @@ public enum ToolMaterials implements Tier {
             throw new IllegalStateException("Invalid tier detected");
         }
         this.material = ConfigureableMaterial.of(ToolsCompat.getTierFor(material));
-        this.durability = baseDurability * ModConfig.durabilityModifier;
+        this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }
 
     ToolMaterials(ConfigureableMaterial material, int baseDurability, Supplier<Ingredient> repairIngredient) {
         this.material = material;
-        this.durability = baseDurability * ModConfig.durabilityModifier;
+        this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }
 
