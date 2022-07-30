@@ -74,7 +74,7 @@ public class BaseAiot extends DiggerItem {
 
         if (result == InteractionResult.PASS) {
             if (hoemode) {
-                result = ToolUtil.toolUse(context, ToolUtil.HOE_TILL);
+                result = ToolUtil.toolUse(context, ToolActions.HOE_TILL);
             } else {
                 result = ToolUtil.toolUse(context, ToolActions.SHOVEL_FLATTEN);
             }

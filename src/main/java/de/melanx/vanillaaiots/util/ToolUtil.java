@@ -23,8 +23,6 @@ import static net.minecraftforge.common.ToolActions.*;
 
 public class ToolUtil {
 
-    public static final ToolAction HOE_TILL = ToolAction.get("till");
-    public static final Set<ToolAction> DEFAULT_HOE_ACTIONS = Set.of(HOE_DIG, HOE_TILL);
     public static final Set<ToolAction> DEFAULT_AIOT_ACTIONS = Set.of(
             AXE_DIG, AXE_STRIP, AXE_SCRAPE, AXE_WAX_OFF,
             HOE_DIG, HOE_TILL,
@@ -45,7 +43,7 @@ public class ToolUtil {
                 && ((side != Direction.DOWN && level.isEmptyBlock(pos.above())) || AXE_STRIP == toolAction)) {
 
             BlockState state = level.getBlockState(pos);
-            BlockState modifiedState = state.getToolModifiedState(level, pos, player, stack, toolAction);
+            BlockState modifiedState = state.getToolModifiedState(context, toolAction, false);
             if (toolAction == HOE_TILL) {
                 modifiedState = ToolUtil.getHoeTillingState(state, context);
                 if (state.getBlock() == Blocks.ROOTED_DIRT) {

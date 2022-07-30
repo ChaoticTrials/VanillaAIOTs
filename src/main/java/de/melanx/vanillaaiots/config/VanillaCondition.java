@@ -16,6 +16,11 @@ public class VanillaCondition implements ICondition {
     }
 
     @Override
+    public boolean test(IContext context) {
+        return this.test();
+    }
+
+    @Override
     public boolean test() {
         return !ModConfig.vanillaOnly;
     }
