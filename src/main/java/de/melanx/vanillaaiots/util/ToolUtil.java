@@ -23,8 +23,6 @@ import static net.minecraftforge.common.ToolActions.*;
 
 public class ToolUtil {
 
-    public static final ToolAction HOE_TILL = ToolAction.get("till");
-    public static final Set<ToolAction> DEFAULT_HOE_ACTIONS = Set.of(HOE_DIG, HOE_TILL);
     public static final Set<ToolAction> DEFAULT_AIOT_ACTIONS = Set.of(
             AXE_DIG, AXE_STRIP, AXE_SCRAPE, AXE_WAX_OFF,
             HOE_DIG, HOE_TILL,
