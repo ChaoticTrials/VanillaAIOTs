@@ -24,6 +24,7 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
     protected void setup() {
         this.shapeless(AIOTRegistry.boneAiot, ModItems.boneSword, ModItems.bonePickaxe, ModItems.boneAxe, ModItems.boneShovel, ModItems.boneHoe);
         this.shapeless(AIOTRegistry.coalAiot, ModItems.coalSword, ModItems.coalPickaxe, ModItems.coalAxe, ModItems.coalShovel, ModItems.coalHoe);
+        this.shapeless(AIOTRegistry.copperAiot, ModItems.copperSword, ModItems.copperPickaxe, ModItems.copperAxe, ModItems.copperShovel, ModItems.copperHoe);
         this.shapeless(AIOTRegistry.emeraldAiot, ModItems.emeraldSword, ModItems.emeraldPickaxe, ModItems.emeraldAxe, ModItems.emeraldShovel, ModItems.emeraldHoe);
         this.shapeless(AIOTRegistry.enderAiot, ModItems.enderSword, ModItems.enderPickaxe, ModItems.enderAxe, ModItems.enderShovel, ModItems.enderHoe);
         this.shapeless(AIOTRegistry.fieryAiot, ModItems.fierySword, ModItems.fieryPickaxe, ModItems.fieryAxe, ModItems.fieryShovel, ModItems.fieryHoe);

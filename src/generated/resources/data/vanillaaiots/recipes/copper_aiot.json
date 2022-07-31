@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "morevanillatools"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:copper_sword"
+          },
+          {
+            "item": "morevanillatools:copper_pickaxe"
+          },
+          {
+            "item": "morevanillatools:copper_axe"
+          },
+          {
+            "item": "morevanillatools:copper_shovel"
+          },
+          {
+            "item": "morevanillatools:copper_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:copper_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}
