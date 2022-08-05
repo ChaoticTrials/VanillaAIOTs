@@ -16,7 +16,7 @@ Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
 [[dependencies.vanillaaiots]]
     modId="forge"
     mandatory=true
-    versionRange="[42,)"
+    versionRange="[42.0.8,)"
     ordering="NONE"
     side="BOTH"
 

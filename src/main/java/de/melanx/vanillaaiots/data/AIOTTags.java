@@ -6,9 +6,11 @@ import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.moddingx.libx.annotation.data.Datagen;
 import org.moddingx.libx.datagen.provider.CommonTagsProviderBase;
@@ -18,6 +20,7 @@ import org.moddingx.libx.mod.ModX;
 public class AIOTTags extends CommonTagsProviderBase {
 
     public static final TagKey<Block> MINEABLE_WITH_AIOT = BlockTags.create(new ResourceLocation("forge", "mineable/aiot"));
+    public static final TagKey<Item> TOOLS_AIOTS = ItemTags.create(new ResourceLocation("forge", "tools/aiots"));
 
     public AIOTTags(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
         super(mod, generator, fileHelper);
@@ -32,6 +35,7 @@ public class AIOTTags extends CommonTagsProviderBase {
                 BlockTags.MINEABLE_WITH_PICKAXE,
                 BlockTags.MINEABLE_WITH_SHOVEL
         );
+        this.item(Tags.Items.TOOLS).addTag(TOOLS_AIOTS);
     }
 
     @Override
@@ -62,6 +66,7 @@ public class AIOTTags extends CommonTagsProviderBase {
                 case REDSTONE -> this.item(ModTags.Items.REDSTONE_TOOLS).add(item);
                 case SLIME -> this.item(ModTags.Items.SLIME_TOOLS).add(item);
             }
+            this.item(TOOLS_AIOTS).add(item);
         }
     }
 }
