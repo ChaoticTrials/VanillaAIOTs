@@ -1,6 +1,7 @@
-package de.melanx.vanillaaiots.data;
+package de.melanx.vanillaaiots.data.recipes;
 
 import de.melanx.MoreVanillaTools.util.ModItems;
+import de.melanx.vanillaaiots.compat.ToolsCompat;
 import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.items.AIOTRegistry;
 import net.minecraft.data.DataGenerator;
@@ -41,6 +42,6 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
 
     @Override
     protected List<ICondition> conditions() {
-        return List.of(new ModLoadedCondition("morevanillatools"), new VanillaCondition());
+        return List.of(new ModLoadedCondition(ToolsCompat.MODID), new VanillaCondition());
     }
 }

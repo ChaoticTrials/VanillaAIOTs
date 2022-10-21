@@ -1,4 +1,4 @@
-package de.melanx.vanillaaiots.data;
+package de.melanx.vanillaaiots.data.recipes;
 
 import de.melanx.vanillaaiots.items.AIOTRegistry;
 import net.minecraft.data.DataGenerator;

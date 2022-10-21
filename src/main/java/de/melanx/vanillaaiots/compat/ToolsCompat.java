@@ -12,7 +12,7 @@ public class ToolsCompat {
     public static final String MODID = "morevanillatools";
 
     public static Item makeItem(float attackDamageModifier, float attackSpeedModifier, de.melanx.vanillaaiots.tools.ToolMaterials tier, Item.Properties properties) {
-        if (ToolsCompat.isMoreVanillaToolsLoaded()) {
+        if (ToolsCompat.isMoreVanillaToolsLoaded() || (CopperizedCompat.isCopperizedLoaded() && tier == de.melanx.vanillaaiots.tools.ToolMaterials.COPPER)) {
             return new BaseAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
         } else {
             return new DummyItem(MODID);
@@ -21,7 +21,7 @@ public class ToolsCompat {
 
     public static Tier getTierFor(String tier) {
         if (!ToolsCompat.isMoreVanillaToolsLoaded()) {
-            return DummyItem.DUMMY_TIER;
+            return CopperizedCompat.isCopperizedLoaded() && tier.equals("copper") ? CopperizedCompat.getCopper() : DummyItem.DUMMY_TIER;
         }
 
         return switch (tier) {

@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "copperized"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "copperized:copper_sword"
+          },
+          {
+            "item": "copperized:copper_pickaxe"
+          },
+          {
+            "item": "copperized:copper_axe"
+          },
+          {
+            "item": "copperized:copper_shovel"
+          },
+          {
+            "item": "copperized:copper_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:copper_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}
