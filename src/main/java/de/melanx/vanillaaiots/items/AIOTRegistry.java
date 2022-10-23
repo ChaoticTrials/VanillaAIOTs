@@ -1,6 +1,7 @@
 package de.melanx.vanillaaiots.items;
 
 import de.melanx.vanillaaiots.VanillaAIOTs;
+import de.melanx.vanillaaiots.compat.CopperizedCompat;
 import de.melanx.vanillaaiots.compat.ToolsCompat;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
@@ -19,7 +20,7 @@ public class AIOTRegistry {
 
     public static final Item boneAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.BONE, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
     public static final Item coalAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.COAL, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
-    public static final Item copperAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.COPPER, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
+    public static final Item copperAiot = CopperizedCompat.makeItem(0, -2.4F, ToolMaterials.COPPER, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
     public static final Item emeraldAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.EMERALD, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
     public static final Item enderAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.ENDER, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));
     public static final Item fieryAiot = ToolsCompat.makeItem(0, -2.4F, ToolMaterials.FIERY, new Item.Properties().tab(VanillaAIOTs.getInstance().tab));

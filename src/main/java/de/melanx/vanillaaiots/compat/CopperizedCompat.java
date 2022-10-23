@@ -13,7 +13,7 @@ public class CopperizedCompat {
     public static final String MODID = "copperized";
 
     public static Item makeItem(float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Item.Properties properties) {
-        if (ToolsCompat.isMoreVanillaToolsLoaded()) {
+        if (CopperizedCompat.isCopperizedLoaded()) {
             return new BaseAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
         } else {
             return new DummyItem(MODID);
