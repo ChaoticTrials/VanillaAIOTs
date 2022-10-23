@@ -32,6 +32,7 @@ public final class VanillaAIOTs extends ModXRegistration {
         instance = this;
 
         MinecraftForge.EVENT_BUS.register(new EventHandler());
+        CraftingHelper.register(VanillaCondition.SERIALIZER);
     }
 
     @Override
@@ -41,12 +42,12 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     @Override
     protected void setup(FMLCommonSetupEvent event) {
-        CraftingHelper.register(VanillaCondition.SERIALIZER);
+        // NO-OP
     }
 
     @Override
     protected void clientSetup(FMLClientSetupEvent event) {
-
+        // NO-OP
     }
 
     public static VanillaAIOTs getInstance() {

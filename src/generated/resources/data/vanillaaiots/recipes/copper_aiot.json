@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "modid": "morevanillatools",
+          "modid": "copperized",
           "type": "forge:mod_loaded"
         },
         {
@@ -15,23 +15,23 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "morevanillatools:redstone_sword"
+            "item": "copperized:copper_sword"
           },
           {
-            "item": "morevanillatools:redstone_pickaxe"
+            "item": "copperized:copper_pickaxe"
           },
           {
-            "item": "morevanillatools:redstone_axe"
+            "item": "copperized:copper_axe"
           },
           {
-            "item": "morevanillatools:redstone_shovel"
+            "item": "copperized:copper_shovel"
           },
           {
-            "item": "morevanillatools:redstone_hoe"
+            "item": "copperized:copper_hoe"
           }
         ],
         "result": {
-          "item": "vanillaaiots:redstone_aiot"
+          "item": "vanillaaiots:copper_aiot"
         }
       }
     },

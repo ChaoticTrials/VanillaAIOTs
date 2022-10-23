@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:glowstone_sword"
+      "conditions": [
+        {
+          "modid": "morevanillatools",
+          "type": "forge:mod_loaded"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:glowstone_sword"
+          },
+          {
+            "item": "morevanillatools:glowstone_pickaxe"
+          },
+          {
+            "item": "morevanillatools:glowstone_axe"
+          },
+          {
+            "item": "morevanillatools:glowstone_shovel"
+          },
+          {
+            "item": "morevanillatools:glowstone_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:glowstone_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:glowstone_pickaxe"
-    },
-    {
-      "item": "morevanillatools:glowstone_axe"
-    },
-    {
-      "item": "morevanillatools:glowstone_shovel"
-    },
-    {
-      "item": "morevanillatools:glowstone_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:glowstone_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

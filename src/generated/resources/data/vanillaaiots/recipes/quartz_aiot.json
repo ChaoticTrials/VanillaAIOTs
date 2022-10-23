@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:quartz_sword"
+      "conditions": [
+        {
+          "modid": "morevanillatools",
+          "type": "forge:mod_loaded"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:quartz_sword"
+          },
+          {
+            "item": "morevanillatools:quartz_pickaxe"
+          },
+          {
+            "item": "morevanillatools:quartz_axe"
+          },
+          {
+            "item": "morevanillatools:quartz_shovel"
+          },
+          {
+            "item": "morevanillatools:quartz_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:quartz_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:quartz_pickaxe"
-    },
-    {
-      "item": "morevanillatools:quartz_axe"
-    },
-    {
-      "item": "morevanillatools:quartz_shovel"
-    },
-    {
-      "item": "morevanillatools:quartz_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:quartz_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

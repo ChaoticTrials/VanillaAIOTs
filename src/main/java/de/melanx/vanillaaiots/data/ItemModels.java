@@ -17,7 +17,7 @@ public class ItemModels extends ItemModelProviderBase {
 
     @Override
     protected void setup() {
-
+        // NO-OP
     }
 
     @Override

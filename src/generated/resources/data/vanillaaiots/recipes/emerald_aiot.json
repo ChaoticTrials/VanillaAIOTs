@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:emerald_sword"
+      "conditions": [
+        {
+          "modid": "morevanillatools",
+          "type": "forge:mod_loaded"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:emerald_sword"
+          },
+          {
+            "item": "morevanillatools:emerald_pickaxe"
+          },
+          {
+            "item": "morevanillatools:emerald_axe"
+          },
+          {
+            "item": "morevanillatools:emerald_shovel"
+          },
+          {
+            "item": "morevanillatools:emerald_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:emerald_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:emerald_pickaxe"
-    },
-    {
-      "item": "morevanillatools:emerald_axe"
-    },
-    {
-      "item": "morevanillatools:emerald_shovel"
-    },
-    {
-      "item": "morevanillatools:emerald_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:emerald_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

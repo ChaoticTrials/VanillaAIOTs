@@ -24,6 +24,10 @@ public class ToolsCompat {
             return DummyItem.DUMMY_TIER;
         }
 
+        if (CopperizedCompat.isCopperizedLoaded() && tier.equals("copper")) {
+            return CopperizedCompat.getCopper();
+        }
+
         return switch (tier) {
             case "bone" -> ToolMaterials.BONE;
             case "coal" -> ToolMaterials.COAL;

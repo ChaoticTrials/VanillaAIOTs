@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:ender_sword"
+      "conditions": [
+        {
+          "modid": "morevanillatools",
+          "type": "forge:mod_loaded"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:ender_sword"
+          },
+          {
+            "item": "morevanillatools:ender_pickaxe"
+          },
+          {
+            "item": "morevanillatools:ender_axe"
+          },
+          {
+            "item": "morevanillatools:ender_shovel"
+          },
+          {
+            "item": "morevanillatools:ender_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:ender_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:ender_pickaxe"
-    },
-    {
-      "item": "morevanillatools:ender_axe"
-    },
-    {
-      "item": "morevanillatools:ender_shovel"
-    },
-    {
-      "item": "morevanillatools:ender_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:ender_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }

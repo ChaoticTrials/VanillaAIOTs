@@ -1,33 +1,49 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "vanillaaiots",
-  "ingredients": [
+  "type": "forge:conditional",
+  "recipes": [
     {
-      "item": "morevanillatools:fiery_sword"
+      "conditions": [
+        {
+          "modid": "morevanillatools",
+          "type": "forge:mod_loaded"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "morevanillatools:fiery_sword"
+          },
+          {
+            "item": "morevanillatools:fiery_pickaxe"
+          },
+          {
+            "item": "morevanillatools:fiery_axe"
+          },
+          {
+            "item": "morevanillatools:fiery_shovel"
+          },
+          {
+            "item": "morevanillatools:fiery_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:fiery_aiot"
+        }
+      }
     },
     {
-      "item": "morevanillatools:fiery_pickaxe"
-    },
-    {
-      "item": "morevanillatools:fiery_axe"
-    },
-    {
-      "item": "morevanillatools:fiery_shovel"
-    },
-    {
-      "item": "morevanillatools:fiery_hoe"
-    }
-  ],
-  "result": {
-    "item": "vanillaaiots:fiery_aiot"
-  },
-  "conditions": [
-    {
-      "type": "vanillaaiots:vanilla_only"
-    },
-    {
-      "modid": "morevanillatools",
-      "type": "forge:mod_loaded"
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
     }
   ]
 }
