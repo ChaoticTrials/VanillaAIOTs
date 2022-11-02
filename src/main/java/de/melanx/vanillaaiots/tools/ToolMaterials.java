@@ -48,9 +48,6 @@ public enum ToolMaterials implements Tier {
 
     ToolMaterials(String material, Supplier<Ingredient> repairIngredient) {
         int baseDurability = ToolsCompat.getDurabilityFor(material);
-        if (baseDurability < 0 && ToolsCompat.isMoreVanillaToolsLoaded()) {
-            throw new IllegalStateException("Invalid tier detected");
-        }
         this.material = ConfigureableMaterial.of(ToolsCompat.getTierFor(material));
         this.durability = baseDurability * ModConfig.durabilityModifier;
         this.repairIngredient = new LazyValue<>(repairIngredient);
