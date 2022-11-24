@@ -51,11 +51,15 @@ public class DummyItem extends Item {
         }
     };
 
-    private final String modid;
+    private final List<String> missingMods;
 
     public DummyItem(String modid) {
-        super(new Item.Properties());
-        this.modid = modid;
+        this(List.of(modid));
+    }
+
+    public DummyItem(List<String> missingMods) {
+        super(new Properties());
+        this.missingMods = missingMods;
     }
 
     @Override
@@ -65,8 +69,13 @@ public class DummyItem extends Item {
 
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
-        if (this.modid != null && !ModList.get().isLoaded(this.modid)) {
-            tooltip.add(ComponentUtil.getTooltip("compat.mod_not_loaded", this.modid).withStyle(ChatFormatting.RED));
+        if (!this.missingMods.isEmpty()) {
+            tooltip.add(Component.translatable("compat.not_loaded_list").withStyle(ChatFormatting.RED));
+            for (String modid : this.missingMods) {
+                if (!ModList.get().isLoaded(modid)) {
+                    tooltip.add(ComponentUtil.getTooltip("compat.mod_not_loaded", modid).withStyle(ChatFormatting.RED));
+                }
+            }
         }
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);

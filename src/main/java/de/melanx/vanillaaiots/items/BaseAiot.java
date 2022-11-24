@@ -15,10 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.DiggerItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -36,12 +33,10 @@ import java.util.List;
 
 public class BaseAiot extends DiggerItem {
 
-    private final ToolMaterials tier;
     private final boolean isVanilla;
 
-    public BaseAiot(float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Properties properties) {
+    public BaseAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
         super(attackDamageModifier, attackSpeedModifier, tier, AIOTTags.MINEABLE_WITH_AIOT, properties);
-        this.tier = tier;
         this.isVanilla = tier == ToolMaterials.WOODEN
                 || tier == ToolMaterials.STONE
                 || tier == ToolMaterials.IRON
@@ -109,13 +104,7 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public int getBurnTime(@Nonnull ItemStack stack, @Nullable RecipeType<?> recipeType) {
-        return this.tier == ToolMaterials.WOODEN ? 400 : 0;
-    }
-
-    @Nonnull
-    @Override
-    public ToolMaterials getTier() {
-        return this.tier;
+        return this.getTier() == ToolMaterials.WOODEN ? 400 : 0;
     }
 
     public boolean isVanilla() {
@@ -143,7 +132,7 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return (this.tier != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK) && super.canApplyAtEnchantingTable(stack, enchantment);
+        return (this.getTier() != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK) && super.canApplyAtEnchantingTable(stack, enchantment);
     }
 
     @Override
@@ -170,7 +159,7 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public int getEnchantmentLevel(ItemStack stack, Enchantment enchantment) {
-        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseAiot item && item.tier == ToolMaterials.SLIME) {
+        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseAiot item && item.getTier() == ToolMaterials.SLIME) {
             return 3;
         }
 

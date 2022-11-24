@@ -1,6 +1,6 @@
 package de.melanx.vanillaaiots.tools;
 
-import de.melanx.vanillaaiots.compat.ToolsCompat;
+import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.config.ConfigureableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
@@ -47,11 +47,8 @@ public enum ToolMaterials implements Tier {
     private final LazyValue<Ingredient> repairIngredient;
 
     ToolMaterials(String material, Supplier<Ingredient> repairIngredient) {
-        int baseDurability = ToolsCompat.getDurabilityFor(material);
-        if (baseDurability < 0 && ToolsCompat.isMoreVanillaToolsLoaded()) {
-            throw new IllegalStateException("Invalid tier detected");
-        }
-        this.material = ConfigureableMaterial.of(ToolsCompat.getTierFor(material));
+        int baseDurability = CompatHelper.getDurabilityFor(material);
+        this.material = ConfigureableMaterial.of(CompatHelper.getTierFor(material));
         this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }

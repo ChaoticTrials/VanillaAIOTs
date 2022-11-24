@@ -38,7 +38,7 @@ Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
     modId="morevanillatools"
     mandatory=false
     versionRange="[1.19.1-5.1.1,)"
-    ordering="NONE"
+    ordering="BEFORE"
     side="BOTH"
 
 [[dependencies.vanillaaiots]]

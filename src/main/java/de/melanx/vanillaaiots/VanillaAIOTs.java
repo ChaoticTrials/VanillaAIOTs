@@ -1,5 +1,6 @@
 package de.melanx.vanillaaiots;
 
+import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.items.AIOTRegistry;
 import net.minecraft.world.item.CreativeModeTab;
@@ -10,12 +11,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 
 @Mod("vanillaaiots")
 public final class VanillaAIOTs extends ModXRegistration {
 
+    public static Logger LOGGER = LoggerFactory.getLogger(VanillaAIOTs.class);
     private static VanillaAIOTs instance;
 
     public VanillaAIOTs() {
@@ -30,6 +34,7 @@ public final class VanillaAIOTs extends ModXRegistration {
 
         instance = this;
         CraftingHelper.register(VanillaCondition.SERIALIZER);
+        CompatHelper.loadTiers();
     }
 
     @Override

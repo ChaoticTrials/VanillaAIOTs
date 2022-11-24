@@ -1,4 +1,5 @@
 {
+  "itemGroup.vanillaaiots": "Vanilla AIOT",
   "item.vanillaaiots.wooden_aiot": "Holz AIOT",
   "item.vanillaaiots.stone_aiot": "Stein AIOT",
   "item.vanillaaiots.iron_aiot": "Eisen AIOT",
@@ -26,5 +27,6 @@
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",
 
+  "compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:",
   "tooltip.vanillaaiots.compat.mod_not_loaded": "Mod fehlt: %s"
 }
