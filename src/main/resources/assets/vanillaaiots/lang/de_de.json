@@ -29,6 +29,5 @@
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",
 
-  "compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:",
-  "tooltip.vanillaaiots.compat.mod_not_loaded": "Mod fehlt: %s"
+  "tooltip.vanillaaiots.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }

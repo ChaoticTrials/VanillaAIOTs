@@ -29,6 +29,5 @@
   "tooltip.vanillaaiots.pathMode": "Create %s",
   "tooltip.vanillaaiots.hoeMode": "Till soil",
 
-  "compat.not_loaded_list": "One of the following mods are missing to use this item:",
-  "tooltip.vanillaaiots.compat.mod_not_loaded": "Mod missing: %s"
+  "tooltip.vanillaaiots.compat.not_loaded_list": "One of the following mods are missing to use this item:"
 }

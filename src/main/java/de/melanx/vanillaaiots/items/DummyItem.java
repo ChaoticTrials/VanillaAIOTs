@@ -70,10 +70,10 @@ public class DummyItem extends Item {
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
         if (!this.missingMods.isEmpty()) {
-            tooltip.add(Component.translatable("compat.not_loaded_list").withStyle(ChatFormatting.RED));
+            tooltip.add(ComponentUtil.getTooltip("compat.not_loaded_list").withStyle(ChatFormatting.RED));
             for (String modid : this.missingMods) {
                 if (!ModList.get().isLoaded(modid)) {
-                    tooltip.add(ComponentUtil.getTooltip("compat.mod_not_loaded", modid).withStyle(ChatFormatting.RED));
+                    tooltip.add(Component.literal("- " + modid).withStyle(ChatFormatting.RED));
                 }
             }
         }
