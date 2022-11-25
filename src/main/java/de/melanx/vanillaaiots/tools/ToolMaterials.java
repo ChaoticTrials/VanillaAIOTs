@@ -4,6 +4,7 @@ import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.config.ConfigureableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
@@ -40,7 +41,9 @@ public enum ToolMaterials implements Tier {
     PRISMARINE("prismarine", () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
     QUARTZ("quartz", () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
     REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
-    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS));
+    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS)),
+
+    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY);
 
     private final ConfigureableMaterial material;
     private final int durability;

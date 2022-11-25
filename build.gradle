@@ -26,5 +26,6 @@ dependencies {
 
     runtimeOnly fg.deobf("mezz.jei:jei-1.19.1-forge:11.2.0.241")
 
-    implementation curse.mod(567666, 3972600)
+    implementation curse.mod(567666, 3972600) // Copperized 2.5 - 1.19+
+    implementation curse.mod(550532, 4104273) // LieOnLion's Enderite 1.4.2-1.19.2
 }

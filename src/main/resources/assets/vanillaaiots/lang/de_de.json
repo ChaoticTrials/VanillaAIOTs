@@ -23,6 +23,8 @@
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
   "item.vanillaaiots.slime_aiot": "Schleim AIOT",
 
+  "item.vanillaaiots.enderite_aiot": "Enderit AIOT",
+
   "tooltip.vanillaaiots.toggleMode": "Modus",
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",

@@ -5,22 +5,25 @@ import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
+import io.github.lieonlion.enderite.core.init.ToolMaterialInit;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.onvoid.copperized.common.CopperizedTiers;
 
 import javax.annotation.Nonnull;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class CompatHelper {
 
     public static String COPPERIZED = "copperized";
+    public static String ENDERITE = "lolenderite";
     public static String MOREVANILLATOOLS = "morevanillatools";
     private static final Map<String, Tier> LOADED_TIERS = new HashMap<>();
 
@@ -36,6 +39,10 @@ public class CompatHelper {
         if (ModList.get().isLoaded(COPPERIZED)) {
             VanillaAIOTs.LOGGER.info(COPPERIZED + " is loaded.");
             LOADED_TIERS.put("copper", CopperizedTiers.COPPER);
+        }
+
+        if (ModList.get().isLoaded(ENDERITE)) {
+            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {
@@ -76,6 +83,28 @@ public class CompatHelper {
 
     public static int getDurabilityFor(String tier) {
         return CompatHelper.getTierFor(tier).getUses();
+    }
+
+    public static Ingredient getIngredientByIds(ResourceLocation... ids) {
+        Set<Ingredient> ingredients = new HashSet<>();
+        for (ResourceLocation id : ids) {
+            if (id.getNamespace().startsWith("#")) {
+                TagKey<Item> tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
+                ingredients.add(Ingredient.of(tag));
+            } else {
+                Item item = ForgeRegistries.ITEMS.getValue(id);
+                if (item == null) {
+                    VanillaAIOTs.LOGGER.info("Item doesn't exist: " + id);
+                }
+                ingredients.add(Ingredient.of(item));
+            }
+        }
+
+        return ingredients.isEmpty() ? Ingredient.EMPTY : Ingredient.merge(ingredients);
+    }
+
+    public static boolean isLoaded(String modid) {
+        return ModList.get().isLoaded(modid);
     }
 
     /**

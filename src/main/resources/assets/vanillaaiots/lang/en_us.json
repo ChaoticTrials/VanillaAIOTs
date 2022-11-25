@@ -23,6 +23,8 @@
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
   "item.vanillaaiots.slime_aiot": "Slime AIOT",
 
+  "item.vanillaaiots.enderite_aiot": "Enderite AIOT",
+
   "tooltip.vanillaaiots.toggleMode": "Mode",
   "tooltip.vanillaaiots.pathMode": "Create %s",
   "tooltip.vanillaaiots.hoeMode": "Till soil",
