@@ -23,7 +23,6 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
@@ -113,11 +112,6 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public float getDestroySpeed(@Nonnull ItemStack stack, @Nonnull BlockState state) {
-        if (state.is(Tags.Blocks.OBSIDIAN)) {
-            int efficiencyLevel = stack.getEnchantmentLevel(Enchantments.BLOCK_EFFICIENCY);
-            return 5.0F * efficiencyLevel + 1;
-        }
-
         if (state.is(Blocks.COBWEB)) {
             return 15.0F;
         }

@@ -11,6 +11,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.moddingx.libx.annotation.data.Datagen;
@@ -30,7 +31,7 @@ public class AIOTTags extends CommonTagsProviderBase {
     @Override
     public void setup() {
         //noinspection unchecked
-        this.block(MINEABLE_WITH_AIOT).addTags(
+        this.block(MINEABLE_WITH_AIOT).add(Blocks.COBWEB).addTags(
                 BlockTags.MINEABLE_WITH_AXE,
                 BlockTags.MINEABLE_WITH_HOE,
                 BlockTags.MINEABLE_WITH_PICKAXE,

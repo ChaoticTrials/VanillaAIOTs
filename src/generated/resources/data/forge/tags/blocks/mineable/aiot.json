@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:cobweb",
     "#minecraft:mineable/axe",
     "#minecraft:mineable/hoe",
     "#minecraft:mineable/pickaxe",
