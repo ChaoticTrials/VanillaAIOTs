@@ -24,12 +24,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
@@ -153,11 +151,6 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public float getDestroySpeed(@Nonnull ItemStack stack, @Nonnull BlockState state) {
-        if (state.is(Tags.Blocks.OBSIDIAN)) {
-            int efficiencyLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_EFFICIENCY, stack);
-            return 5.0F * efficiencyLevel + 1;
-        }
-
         if (state.is(Blocks.COBWEB)) {
             return 15.0F;
         }
