@@ -3,7 +3,6 @@ package de.melanx.vanillaaiots.data;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -13,19 +12,16 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import org.moddingx.libx.annotation.data.Datagen;
-import org.moddingx.libx.datagen.provider.CommonTagsProviderBase;
-import org.moddingx.libx.mod.ModX;
+import org.moddingx.libx.datagen.DatagenContext;
+import org.moddingx.libx.datagen.provider.tags.CommonTagsProviderBase;
 
-@Datagen
 public class AIOTTags extends CommonTagsProviderBase {
 
     public static final TagKey<Block> MINEABLE_WITH_AIOT = BlockTags.create(new ResourceLocation("forge", "mineable/aiot"));
     public static final TagKey<Item> TOOLS_AIOTS = ItemTags.create(new ResourceLocation("forge", "tools/aiots"));
 
-    public AIOTTags(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
-        super(mod, generator, fileHelper);
+    public AIOTTags(DatagenContext context) {
+        super(context);
     }
 
     @Override

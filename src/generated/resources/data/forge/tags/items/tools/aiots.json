@@ -1,26 +1,26 @@
 {
   "values": [
-    "vanillaaiots:wooden_aiot",
-    "vanillaaiots:stone_aiot",
-    "vanillaaiots:iron_aiot",
-    "vanillaaiots:golden_aiot",
-    "vanillaaiots:diamond_aiot",
-    "vanillaaiots:netherite_aiot",
     "vanillaaiots:bone_aiot",
     "vanillaaiots:coal_aiot",
     "vanillaaiots:copper_aiot",
+    "vanillaaiots:diamond_aiot",
     "vanillaaiots:emerald_aiot",
     "vanillaaiots:ender_aiot",
+    "vanillaaiots:enderite_aiot",
     "vanillaaiots:fiery_aiot",
     "vanillaaiots:glowstone_aiot",
+    "vanillaaiots:golden_aiot",
+    "vanillaaiots:iron_aiot",
     "vanillaaiots:lapis_aiot",
     "vanillaaiots:nether_aiot",
+    "vanillaaiots:netherite_aiot",
     "vanillaaiots:obsidian_aiot",
     "vanillaaiots:paper_aiot",
     "vanillaaiots:prismarine_aiot",
     "vanillaaiots:quartz_aiot",
     "vanillaaiots:redstone_aiot",
     "vanillaaiots:slime_aiot",
-    "vanillaaiots:enderite_aiot"
+    "vanillaaiots:stone_aiot",
+    "vanillaaiots:wooden_aiot"
   ]
 }

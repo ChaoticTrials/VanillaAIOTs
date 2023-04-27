@@ -5,8 +5,8 @@ import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
-import io.github.lieonlion.enderite.core.init.ToolMaterialInit;
-import net.minecraft.core.Registry;
+import io.github.lieonlion.enderite.Init.ToolMaterialInit;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -89,7 +89,7 @@ public class CompatHelper {
         Set<Ingredient> ingredients = new HashSet<>();
         for (ResourceLocation id : ids) {
             if (id.getNamespace().startsWith("#")) {
-                TagKey<Item> tag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
+                TagKey<Item> tag = TagKey.create(Registries.ITEM, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
                 ingredients.add(Ingredient.of(tag));
             } else {
                 Item item = ForgeRegistries.ITEMS.getValue(id);

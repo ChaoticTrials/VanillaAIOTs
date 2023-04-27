@@ -1,13 +1,11 @@
 package de.melanx.vanillaaiots.items;
 
 import de.melanx.vanillaaiots.compat.LibCompat;
-import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import de.melanx.vanillaaiots.util.ComponentUtil;
 import de.melanx.vanillaaiots.util.ToolUtil;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -15,7 +13,10 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -136,15 +137,6 @@ public class BaseAiot extends DiggerItem {
         }
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);
-    }
-
-    @Override
-    public void fillItemCategory(@Nonnull CreativeModeTab category, @Nonnull NonNullList<ItemStack> items) {
-        if (!this.isVanilla && ModConfig.vanillaOnly) {
-            return;
-        }
-
-        super.fillItemCategory(category, items);
     }
 
     private static void setHoemode(ItemStack stack, boolean b) {
