@@ -44,13 +44,6 @@ public class ToolUtil {
 
             BlockState state = level.getBlockState(pos);
             BlockState modifiedState = state.getToolModifiedState(context, toolAction, false);
-            if (toolAction == HOE_TILL) {
-                modifiedState = ToolUtil.getHoeTillingState(state, context);
-                if (state.getBlock() == Blocks.ROOTED_DIRT) {
-                    Block.popResourceFromFace(level, pos, side, new ItemStack(Items.HANGING_ROOTS));
-                }
-            }
-
             if (modifiedState != null) {
                 SoundEvent sound;
                 if (DEFAULT_AXE_ACTIONS.contains(toolAction)) {
@@ -87,24 +80,5 @@ public class ToolUtil {
         }
 
         return InteractionResult.PASS;
-    }
-
-    public static BlockState getHoeTillingState(BlockState state, UseOnContext context) {
-        Block block = state.getBlock();
-        if (block == Blocks.ROOTED_DIRT) {
-            return Blocks.DIRT.defaultBlockState();
-        }
-
-        if (context.getClickedFace() != Direction.DOWN && context.getLevel().getBlockState(context.getClickedPos().above()).isAir()) {
-            if (block == Blocks.GRASS_BLOCK || block == Blocks.DIRT_PATH || block == Blocks.DIRT) {
-                return Blocks.FARMLAND.defaultBlockState();
-            }
-
-            if (block == Blocks.COARSE_DIRT) {
-                return Blocks.DIRT.defaultBlockState();
-            }
-        }
-
-        return null;
     }
 }
