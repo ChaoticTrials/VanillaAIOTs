@@ -20,6 +20,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -127,7 +128,8 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return (this.getTier() != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK) && super.canApplyAtEnchantingTable(stack, enchantment);
+        return (this.getTier() != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK)
+                && (enchantment.category == EnchantmentCategory.WEAPON || super.canApplyAtEnchantingTable(stack, enchantment));
     }
 
     @Override
