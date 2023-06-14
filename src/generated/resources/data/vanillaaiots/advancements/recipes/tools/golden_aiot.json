@@ -82,5 +82,6 @@
     "recipes": [
       "vanillaaiots:golden_aiot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

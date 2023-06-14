@@ -82,5 +82,6 @@
     "recipes": [
       "vanillaaiots:wooden_aiot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

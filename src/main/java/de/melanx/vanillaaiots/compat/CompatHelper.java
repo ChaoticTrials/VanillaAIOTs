@@ -5,7 +5,6 @@ import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
-import io.github.lieonlion.enderite.Init.ToolMaterialInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -42,7 +41,8 @@ public class CompatHelper {
         }
 
         if (ModList.get().isLoaded(ENDERITE)) {
-            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE);
+            VanillaAIOTs.LOGGER.info(ENDERITE + " is loaded.");
+//            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE); todo enderite
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {

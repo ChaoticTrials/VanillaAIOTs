@@ -1,16 +1,10 @@
 package de.melanx.vanillaaiots.items;
 
-import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.compat.CompatHelper;
-import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.moddingx.libx.annotation.registration.RegisterClass;
 
 import java.util.List;
@@ -56,24 +50,5 @@ public class AIOTRegistry {
         }
 
         return new DummyItem(modids);
-    }
-
-    public static void createTab(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(VanillaAIOTs.getInstance().resource("tab"), builder -> {
-            builder.title(Component.literal("Vanilla AIOTs"));
-            builder.icon(() -> new ItemStack(diamondAiot))
-                    .displayItems((enabledFlags, output) -> {
-                        for (Item item : ForgeRegistries.ITEMS.getValues()) {
-                            //noinspection DataFlowIssue
-                            if (VanillaAIOTs.getInstance().modid.equals(ForgeRegistries.ITEMS.getKey(item).getNamespace())) {
-                                if (item instanceof BaseAiot tool && !tool.isVanilla() && ModConfig.vanillaOnly) {
-                                    continue;
-                                }
-
-                                output.accept(new ItemStack(item));
-                            }
-                        }
-                    });
-        });
     }
 }

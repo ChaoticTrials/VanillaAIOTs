@@ -82,5 +82,6 @@
     "recipes": [
       "vanillaaiots:stone_aiot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

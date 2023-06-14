@@ -5,14 +5,11 @@ import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
 import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
-import de.melanx.vanillaaiots.data.recipes.EnderiteRecipes;
 import de.melanx.vanillaaiots.data.recipes.Recipes;
-import de.melanx.vanillaaiots.items.AIOTRegistry;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.moddingx.libx.datagen.DatagenSystem;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
@@ -29,15 +26,13 @@ public final class VanillaAIOTs extends ModXRegistration {
         instance = this;
         CraftingHelper.register(VanillaCondition.SERIALIZER);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AIOTRegistry::createTab);
-
         DatagenSystem.create(this, system -> {
             system.addDataProvider(AIOTTags::new);
             system.addDataProvider(ItemModels::new);
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
 //            system.addDataProvider(CopperRecipes::new); todo re-add when copperized on 1.19.4
-            system.addDataProvider(EnderiteRecipes::new);
+//            system.addDataProvider(EnderiteRecipes::new); todo enderite
         });
 
         CompatHelper.loadTiers();
