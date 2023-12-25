@@ -1,0 +1,32 @@
+{
+  "item.vanillaaiots.wooden_aiot": "Дерев'яний всеінструмент",
+  "item.vanillaaiots.stone_aiot": "Кам'яний всеінструмент",
+  "item.vanillaaiots.iron_aiot": "Залізний всеінструмент",
+  "item.vanillaaiots.golden_aiot": "Золотий всеінструмент",
+  "item.vanillaaiots.diamond_aiot": "Діамантовий всеінструмент",
+  "item.vanillaaiots.netherite_aiot": "Незеритовий всеінструмент",
+
+  "item.vanillaaiots.bone_aiot": "Кістяний всеінструмент",
+  "item.vanillaaiots.coal_aiot": "Вугільний всеінструмент",
+  "item.vanillaaiots.copper_aiot": "Мідний всеінструмент",
+  "item.vanillaaiots.emerald_aiot": "Смарагдовий всеінструмент",
+  "item.vanillaaiots.ender_aiot": "Всеінструмент Енду",
+  "item.vanillaaiots.fiery_aiot": "Вогняний всеінструмент",
+  "item.vanillaaiots.glowstone_aiot": "Світлокам'яний всеінструмент",
+  "item.vanillaaiots.lapis_aiot": "Лазуритовий всеінструмент",
+  "item.vanillaaiots.nether_aiot": "Незерський всеінструмент",
+  "item.vanillaaiots.obsidian_aiot": "Обсидіановий всеінструмент",
+  "item.vanillaaiots.paper_aiot": "Паперовий всеінструмент",
+  "item.vanillaaiots.prismarine_aiot": "Призмариновий всеінструмент",
+  "item.vanillaaiots.quartz_aiot": "Кварцовий всеінструмент",
+  "item.vanillaaiots.redstone_aiot": "Редстоуновий всеінструмент",
+  "item.vanillaaiots.slime_aiot": "Слизовий всеінструмент",
+
+  "item.vanillaaiots.enderite_aiot": "Ендеритовий всеінструмент",
+
+  "tooltip.vanillaaiots.toggleMode": "Режим",
+  "tooltip.vanillaaiots.pathMode": "Створити %s",
+  "tooltip.vanillaaiots.hoeMode": "Обробка ґрунту",
+
+  "tooltip.vanillaaiots.compat.not_loaded_list": "Не вистачає одного з наступних модів, щоб використовувати цей предмет:"
+}
