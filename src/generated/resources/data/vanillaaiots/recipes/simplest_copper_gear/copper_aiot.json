@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "simplest_copper_gear"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "simplest_copper_gear:copper_sword"
+          },
+          {
+            "item": "simplest_copper_gear:copper_pickaxe"
+          },
+          {
+            "item": "simplest_copper_gear:copper_axe"
+          },
+          {
+            "item": "simplest_copper_gear:copper_shovel"
+          },
+          {
+            "item": "simplest_copper_gear:copper_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:copper_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

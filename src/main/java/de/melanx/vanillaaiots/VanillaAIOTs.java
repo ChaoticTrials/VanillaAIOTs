@@ -6,6 +6,7 @@ import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
 import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
 import de.melanx.vanillaaiots.data.recipes.Recipes;
+import de.melanx.vanillaaiots.data.recipes.SimplestCopperGearRecipes;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -31,7 +32,7 @@ public final class VanillaAIOTs extends ModXRegistration {
             system.addDataProvider(ItemModels::new);
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
-//            system.addDataProvider(CopperRecipes::new); todo re-add when copperized on 1.19.4
+            system.addDataProvider(SimplestCopperGearRecipes::new);
 //            system.addDataProvider(EnderiteRecipes::new); todo enderite
         });
 

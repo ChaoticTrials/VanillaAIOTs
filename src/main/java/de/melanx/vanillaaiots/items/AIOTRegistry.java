@@ -22,7 +22,7 @@ public class AIOTRegistry {
 
     public static final Item boneAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.BONE, new Item.Properties());
     public static final Item coalAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.COAL, new Item.Properties());
-    public static final Item copperAiot = AIOTRegistry.makeItem(NonNullList.of(CompatHelper.COPPERIZED, CompatHelper.MOREVANILLATOOLS), 0, -2.4F, ToolMaterials.COPPER, new Item.Properties());
+    public static final Item copperAiot = AIOTRegistry.makeItem(NonNullList.of(CompatHelper.SIMPLEST_COPPER_GEAR, CompatHelper.MOREVANILLATOOLS), 0, -2.4F, ToolMaterials.COPPER, new Item.Properties());
     public static final Item emeraldAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.EMERALD, new Item.Properties());
     public static final Item enderAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.ENDER, new Item.Properties());
     public static final Item fieryAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.FIERY, new Item.Properties());
