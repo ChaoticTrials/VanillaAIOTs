@@ -5,6 +5,7 @@ import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
+import io.github.lieonlion.enderite.init.ToolMaterialsInit;
 import net.indevo.simplest_copper_gear.item.ModToolTiers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -42,7 +43,8 @@ public class CompatHelper {
 
         if (ModList.get().isLoaded(ENDERITE)) {
             VanillaAIOTs.LOGGER.info(ENDERITE + " is loaded.");
-//            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE);
+            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
+            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {

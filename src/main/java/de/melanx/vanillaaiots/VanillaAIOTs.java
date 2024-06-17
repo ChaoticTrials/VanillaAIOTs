@@ -5,6 +5,7 @@ import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
 import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
+import de.melanx.vanillaaiots.data.recipes.EnderiteRecipes;
 import de.melanx.vanillaaiots.data.recipes.Recipes;
 import de.melanx.vanillaaiots.data.recipes.SimplestCopperGearRecipes;
 import net.minecraftforge.common.crafting.CraftingHelper;
@@ -33,7 +34,7 @@ public final class VanillaAIOTs extends ModXRegistration {
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
-//            system.addDataProvider(EnderiteRecipes::new); todo enderite
+            system.addDataProvider(EnderiteRecipes::new);
         });
 
         CompatHelper.loadTiers();

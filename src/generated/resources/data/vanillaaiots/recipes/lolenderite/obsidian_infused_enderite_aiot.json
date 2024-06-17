@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "lolenderite"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "lolenderite:obsidian_infused_enderite_sword"
+          },
+          {
+            "item": "lolenderite:obsidian_infused_enderite_pickaxe"
+          },
+          {
+            "item": "lolenderite:obsidian_infused_enderite_axe"
+          },
+          {
+            "item": "lolenderite:obsidian_infused_enderite_shovel"
+          },
+          {
+            "item": "lolenderite:obsidian_infused_enderite_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:obsidian_infused_enderite_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

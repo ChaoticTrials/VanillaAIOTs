@@ -23,6 +23,7 @@
   "item.vanillaaiots.slime_aiot": "Slime AIOT",
 
   "item.vanillaaiots.enderite_aiot": "Enderite AIOT",
+  "item.vanillaaiots.obsidian_infused_enderite_aiot": "Obsidian Infused Enderite AIOT",
 
   "tooltip.vanillaaiots.toggleMode": "Mode",
   "tooltip.vanillaaiots.pathMode": "Create %s",

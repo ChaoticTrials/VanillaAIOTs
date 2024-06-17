@@ -37,6 +37,7 @@ public class AIOTRegistry {
     public static final Item slimeAiot = AIOTRegistry.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -2.4F, ToolMaterials.SLIME, new Item.Properties());
 
     public static final Item enderiteAiot = AIOTRegistry.makeItem(CompatHelper.ENDERITE, 0, -2.4F, ToolMaterials.ENDERITE, new Item.Properties());
+    public static final Item obsidianInfusedEnderiteAiot = AIOTRegistry.makeItem(CompatHelper.ENDERITE, 0, -2.4F, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, new Item.Properties());
 
     public static Item makeItem(String modid, float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Item.Properties properties) {
         return AIOTRegistry.makeItem(List.of(modid), attackDamageModifier, attackSpeedModifier, tier, properties);
