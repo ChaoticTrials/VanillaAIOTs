@@ -13,11 +13,11 @@ public class ItemModels extends ItemModelProviderBase {
 
     @Override
     protected void setup() {
-
+        // NO-OP
     }
 
     @Override
     protected void defaultItem(ResourceLocation id, Item item) {
-        this.withExistingParent(id.getPath(), HANDHELD).texture("layer0", new ResourceLocation(id.getNamespace(), "item/" + id.getPath()));
+        this.withExistingParent(id.getPath(), HANDHELD).texture("layer0", ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath()));
     }
 }

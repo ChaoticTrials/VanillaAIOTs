@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:redstone_sword"
+    },
+    {
+      "item": "morevanillatools:redstone_pickaxe"
+    },
+    {
+      "item": "morevanillatools:redstone_axe"
+    },
+    {
+      "item": "morevanillatools:redstone_shovel"
+    },
+    {
+      "item": "morevanillatools:redstone_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:redstone_aiot"
+  }
+}

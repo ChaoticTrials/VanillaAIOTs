@@ -22,8 +22,6 @@
   "item.vanillaaiots.redstone_aiot": "Редстоуновий всеінструмент",
   "item.vanillaaiots.slime_aiot": "Слизовий всеінструмент",
 
-  "item.vanillaaiots.enderite_aiot": "Ендеритовий всеінструмент",
-
   "tooltip.vanillaaiots.toggleMode": "Режим",
   "tooltip.vanillaaiots.pathMode": "Створити %s",
   "tooltip.vanillaaiots.hoeMode": "Обробка ґрунту",

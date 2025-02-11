@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:fiery_sword"
+    },
+    {
+      "item": "morevanillatools:fiery_pickaxe"
+    },
+    {
+      "item": "morevanillatools:fiery_axe"
+    },
+    {
+      "item": "morevanillatools:fiery_shovel"
+    },
+    {
+      "item": "morevanillatools:fiery_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:fiery_aiot"
+  }
+}

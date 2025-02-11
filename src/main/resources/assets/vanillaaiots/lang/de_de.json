@@ -22,9 +22,6 @@
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
   "item.vanillaaiots.slime_aiot": "Schleim AIOT",
 
-  "item.vanillaaiots.enderite_aiot": "Enderit AIOT",
-  "item.vanillaaiots.obsidian_infused_enderite_aiot": "Mit Obsidian angereichertes Enderit AIOT",
-
   "tooltip.vanillaaiots.toggleMode": "Modus",
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",

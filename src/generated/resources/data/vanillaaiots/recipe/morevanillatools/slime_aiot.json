@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:slime_sword"
+    },
+    {
+      "item": "morevanillatools:slime_pickaxe"
+    },
+    {
+      "item": "morevanillatools:slime_axe"
+    },
+    {
+      "item": "morevanillatools:slime_shovel"
+    },
+    {
+      "item": "morevanillatools:slime_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:slime_aiot"
+  }
+}

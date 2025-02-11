@@ -1,10 +1,8 @@
 package de.melanx.vanillaaiots.tools;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
-import de.melanx.vanillaaiots.config.ConfigureableMaterial;
+import de.melanx.vanillaaiots.config.ConfigurableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
-import de.melanx.vanillaaiots.data.AIOTTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
@@ -12,7 +10,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 import org.moddingx.libx.util.lazy.LazyValue;
 
 import javax.annotation.Nonnull;
@@ -21,7 +19,7 @@ import java.util.function.Supplier;
 public enum ToolMaterials implements Tier {
 
     WOODEN(ModConfig.ToolValues.wood, Tiers.WOOD.getUses(), () -> Ingredient.of(ItemTags.PLANKS)),
-    STONE(ModConfig.ToolValues.stone, Tiers.STONE.getUses(), () -> Ingredient.of(Tags.Items.COBBLESTONE)),
+    STONE(ModConfig.ToolValues.stone, Tiers.STONE.getUses(), () -> Ingredient.of(Tags.Items.COBBLESTONES)),
     IRON(ModConfig.ToolValues.iron, Tiers.IRON.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_IRON)),
     GOLDEN(ModConfig.ToolValues.gold, Tiers.GOLD.getUses(), () -> Ingredient.of(Tags.Items.INGOTS_GOLD)),
     DIAMOND(ModConfig.ToolValues.diamond, Tiers.DIAMOND.getUses(), () -> Ingredient.of(Tags.Items.GEMS_DIAMOND)),
@@ -36,28 +34,25 @@ public enum ToolMaterials implements Tier {
     GLOWSTONE("glowstone", () -> Ingredient.of(Tags.Items.DUSTS_GLOWSTONE)),
     LAPIS("lapis", () -> Ingredient.of(Tags.Items.GEMS_LAPIS)),
     NETHER("nether", () -> Ingredient.of(Items.NETHER_BRICKS)),
-    OBSIDIAN("obsidian", () -> Ingredient.of(Tags.Items.OBSIDIAN)),
+    OBSIDIAN("obsidian", () -> Ingredient.of(Tags.Items.OBSIDIANS)),
     PAPER("paper", () -> Ingredient.of(Items.PAPER)),
-    PRISMARINE("prismarine", () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
+    PRISMARINE("prismarine", () -> Ingredient.of(Tags.Items.GEMS_PRISMARINE)),
     QUARTZ("quartz", () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
     REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
-    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS)),
+    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIME_BALLS));
 
-    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY),
-    OBSIDIAN_INFUSED_ENDERITE("obsidian_infused_enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "obsidian_infused_enderite_ingot")) : Ingredient.EMPTY);
-
-    private final ConfigureableMaterial material;
+    private final ConfigurableMaterial material;
     private final int durability;
     private final LazyValue<Ingredient> repairIngredient;
 
     ToolMaterials(String material, Supplier<Ingredient> repairIngredient) {
         int baseDurability = CompatHelper.getDurabilityFor(material);
-        this.material = ConfigureableMaterial.of(CompatHelper.getTierFor(material));
+        this.material = ConfigurableMaterial.of(CompatHelper.getTierFor(material));
         this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }
 
-    ToolMaterials(ConfigureableMaterial material, int baseDurability, Supplier<Ingredient> repairIngredient) {
+    ToolMaterials(ConfigurableMaterial material, int baseDurability, Supplier<Ingredient> repairIngredient) {
         this.material = material;
         this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
@@ -78,9 +73,10 @@ public enum ToolMaterials implements Tier {
         return this.material.attackDamageBonus();
     }
 
+    @Nonnull
     @Override
-    public int getLevel() {
-        return this.material.harvestLevel();
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return this.material.incorrectBlockForDrops();
     }
 
     @Override
@@ -92,10 +88,5 @@ public enum ToolMaterials implements Tier {
     @Override
     public Ingredient getRepairIngredient() {
         return this.repairIngredient.get();
-    }
-
-    @Override
-    public TagKey<Block> getTag() {
-        return AIOTTags.MINEABLE_WITH_AIOT;
     }
 }

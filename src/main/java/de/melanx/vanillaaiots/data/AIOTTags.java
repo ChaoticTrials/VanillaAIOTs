@@ -11,14 +11,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.tags.CommonTagsProviderBase;
 
 public class AIOTTags extends CommonTagsProviderBase {
 
-    public static final TagKey<Block> MINEABLE_WITH_AIOT = BlockTags.create(new ResourceLocation("forge", "mineable/aiot"));
-    public static final TagKey<Item> TOOLS_AIOTS = ItemTags.create(new ResourceLocation("forge", "tools/aiots"));
+    public static final TagKey<Block> MINEABLE_WITH_AIOT = BlockTags.create(ResourceLocation.fromNamespaceAndPath("forge", "mineable/aiot"));
+    public static final TagKey<Item> TOOLS_AIOTS = ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "tools/aiots"));
 
     public AIOTTags(DatagenContext context) {
         super(context);
@@ -33,7 +33,13 @@ public class AIOTTags extends CommonTagsProviderBase {
                 BlockTags.MINEABLE_WITH_PICKAXE,
                 BlockTags.MINEABLE_WITH_SHOVEL
         );
-        this.item(Tags.Items.TOOLS).addTag(TOOLS_AIOTS);
+        this.item(Tags.Items.MELEE_WEAPON_TOOLS).addTag(TOOLS_AIOTS);
+        this.item(Tags.Items.MINING_TOOL_TOOLS).addTag(TOOLS_AIOTS);
+        this.item(ItemTags.SWORD_ENCHANTABLE).addTag(TOOLS_AIOTS);
+        this.item(ItemTags.SHARP_WEAPON_ENCHANTABLE).addTag(TOOLS_AIOTS);
+        this.item(ItemTags.MINING_ENCHANTABLE).addTag(TOOLS_AIOTS);
+        this.item(ItemTags.MINING_LOOT_ENCHANTABLE).addTag(TOOLS_AIOTS);
+        this.item(ItemTags.DURABILITY_ENCHANTABLE).addTag(TOOLS_AIOTS);
     }
 
     @Override

@@ -2,14 +2,14 @@ package de.melanx.vanillaaiots.data.recipes;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.config.VanillaCondition;
-import de.melanx.vanillaaiots.items.AIOTRegistry;
-import net.indevo.simplest_copper_gear.item.ModItems;
+import de.melanx.vanillaaiots.registration.AIOTRegistry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
+import net.teamsolar.simplest_copper_gear.item.ModItems;
 import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
@@ -29,8 +29,7 @@ public class SimplestCopperGearRecipes extends RecipeProviderBase implements Cra
     }
 
     private ResourceLocation output(@Nonnull Item item) {
-        //noinspection ConstantConditions
-        return this.mod.resource(CompatHelper.SIMPLEST_COPPER_GEAR + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+        return this.mod.resource(CompatHelper.SIMPLEST_COPPER_GEAR + "/" + BuiltInRegistries.ITEM.getKey(item).getPath());
     }
 
     @Override

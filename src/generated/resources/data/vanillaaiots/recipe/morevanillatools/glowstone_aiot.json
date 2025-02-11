@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:glowstone_sword"
+    },
+    {
+      "item": "morevanillatools:glowstone_pickaxe"
+    },
+    {
+      "item": "morevanillatools:glowstone_axe"
+    },
+    {
+      "item": "morevanillatools:glowstone_shovel"
+    },
+    {
+      "item": "morevanillatools:glowstone_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:glowstone_aiot"
+  }
+}

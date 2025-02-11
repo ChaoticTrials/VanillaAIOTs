@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:quartz_sword"
+    },
+    {
+      "item": "morevanillatools:quartz_pickaxe"
+    },
+    {
+      "item": "morevanillatools:quartz_axe"
+    },
+    {
+      "item": "morevanillatools:quartz_shovel"
+    },
+    {
+      "item": "morevanillatools:quartz_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:quartz_aiot"
+  }
+}

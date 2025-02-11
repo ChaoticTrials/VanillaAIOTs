@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:nether_sword"
+    },
+    {
+      "item": "morevanillatools:nether_pickaxe"
+    },
+    {
+      "item": "morevanillatools:nether_axe"
+    },
+    {
+      "item": "morevanillatools:nether_shovel"
+    },
+    {
+      "item": "morevanillatools:nether_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:nether_aiot"
+  }
+}

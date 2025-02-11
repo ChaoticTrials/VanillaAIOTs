@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:obsidian_sword"
+    },
+    {
+      "item": "morevanillatools:obsidian_pickaxe"
+    },
+    {
+      "item": "morevanillatools:obsidian_axe"
+    },
+    {
+      "item": "morevanillatools:obsidian_shovel"
+    },
+    {
+      "item": "morevanillatools:obsidian_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:obsidian_aiot"
+  }
+}

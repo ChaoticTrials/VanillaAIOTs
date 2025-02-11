@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:emerald_sword"
+    },
+    {
+      "item": "morevanillatools:emerald_pickaxe"
+    },
+    {
+      "item": "morevanillatools:emerald_axe"
+    },
+    {
+      "item": "morevanillatools:emerald_shovel"
+    },
+    {
+      "item": "morevanillatools:emerald_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:emerald_aiot"
+  }
+}

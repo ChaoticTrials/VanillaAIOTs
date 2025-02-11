@@ -5,17 +5,18 @@ import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
-import io.github.lieonlion.enderite.init.ToolMaterialsInit;
-import net.indevo.simplest_copper_gear.item.ModToolTiers;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.NeoForge;
+import net.teamsolar.simplest_copper_gear.item.ModToolTiers;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -29,7 +30,7 @@ public class CompatHelper {
 
     public static void loadTiers() {
         RegisterTiersEvent event = new RegisterTiersEvent();
-        MinecraftForge.EVENT_BUS.post(event);
+        NeoForge.EVENT_BUS.post(event);
         event.getTiersByModid().forEach((modid, map) -> {
             if (ModList.get().isLoaded(modid)) {
                 LOADED_TIERS.putAll(map);
@@ -37,18 +38,12 @@ public class CompatHelper {
         });
 
         if (ModList.get().isLoaded(SIMPLEST_COPPER_GEAR)) {
-            VanillaAIOTs.LOGGER.info(SIMPLEST_COPPER_GEAR + " is loaded.");
+            VanillaAIOTs.LOGGER.info("{} is loaded.", SIMPLEST_COPPER_GEAR);
             LOADED_TIERS.put("copper", ModToolTiers.COPPER);
         }
 
-        if (ModList.get().isLoaded(ENDERITE)) {
-            VanillaAIOTs.LOGGER.info(ENDERITE + " is loaded.");
-            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
-            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
-        }
-
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {
-            VanillaAIOTs.LOGGER.info(MOREVANILLATOOLS + " is loaded.");
+            VanillaAIOTs.LOGGER.info("{} is loaded.", MOREVANILLATOOLS);
             LOADED_TIERS.put("bone", ToolMaterials.BONE);
             LOADED_TIERS.put("coal", ToolMaterials.COAL);
             LOADED_TIERS.put("copper", ToolMaterials.COPPER);
@@ -73,7 +68,7 @@ public class CompatHelper {
 
     public static Item makeItem(List<String> modids, float attackDamageModifier, float attackSpeedModifier, String tier, Item.Properties properties) {
         if (LOADED_TIERS.containsKey(tier)) {
-            return new BaseAiot(attackDamageModifier, attackSpeedModifier, CompatHelper.createTier(CompatHelper.getTierFor(tier)), properties);
+            return new BaseAiot(CompatHelper.createTier(CompatHelper.getTierFor(tier)), properties);
         }
 
         return new DummyItem(modids);
@@ -91,18 +86,18 @@ public class CompatHelper {
         Set<Ingredient> ingredients = new HashSet<>();
         for (ResourceLocation id : ids) {
             if (id.getNamespace().startsWith("#")) {
-                TagKey<Item> tag = TagKey.create(Registries.ITEM, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
+                TagKey<Item> tag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(id.getNamespace().replace("#", ""), id.getPath()));
                 ingredients.add(Ingredient.of(tag));
             } else {
-                Item item = ForgeRegistries.ITEMS.getValue(id);
-                if (item == null) {
-                    VanillaAIOTs.LOGGER.info("Item doesn't exist: " + id);
+                Item item = BuiltInRegistries.ITEM.get(id);
+                if (item == Items.AIR && !id.equals(ResourceLocation.fromNamespaceAndPath("minecraft", "air"))) {
+                    VanillaAIOTs.LOGGER.info("Item doesn't exist: {}", id);
                 }
                 ingredients.add(Ingredient.of(item));
             }
         }
 
-        return ingredients.isEmpty() ? Ingredient.EMPTY : Ingredient.merge(ingredients);
+        return ingredients.isEmpty() ? Ingredient.EMPTY : Ingredient.fromValues(ingredients.stream().flatMap(i -> Arrays.stream(i.getValues())));
     }
 
     public static boolean isLoaded(String modid) {
@@ -131,9 +126,10 @@ public class CompatHelper {
                 return base.getAttackDamageBonus();
             }
 
+            @Nonnull
             @Override
-            public int getLevel() {
-                return base.getLevel();
+            public TagKey<Block> getIncorrectBlocksForDrops() {
+                return base.getIncorrectBlocksForDrops();
             }
 
             @Override
@@ -147,9 +143,5 @@ public class CompatHelper {
                 return base.getRepairIngredient();
             }
         };
-    }
-
-    public record LoadedTier(String name, Tier tier) {
-
     }
 }

@@ -6,32 +6,32 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ToolAction;
+import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.Set;
 
-import static net.minecraftforge.common.ToolActions.*;
+import static net.neoforged.neoforge.common.ItemAbilities.*;
+
 
 public class ToolUtil {
 
-    public static final Set<ToolAction> DEFAULT_AIOT_ACTIONS = Set.of(
+    public static final Set<ItemAbility> DEFAULT_AIOT_ABILITIES = Set.of(
             AXE_DIG, AXE_STRIP, AXE_SCRAPE, AXE_WAX_OFF,
             HOE_DIG, HOE_TILL,
-            SHOVEL_DIG, SHOVEL_FLATTEN,
+            SHOVEL_DIG, SHOVEL_FLATTEN, SHOVEL_DOUSE,
             PICKAXE_DIG,
             SWORD_DIG
     );
 
-    public static InteractionResult toolUse(UseOnContext context, ToolAction toolAction) {
+    public static InteractionResult toolUse(UseOnContext context, ItemAbility toolAction) {
         Level level = context.getLevel();
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
@@ -71,8 +71,8 @@ public class ToolUtil {
 
             if (modifiedState != null) {
                 if (!level.isClientSide) {
-                    level.setBlock(pos, modifiedState, 11);
-                    stack.hurtAndBreak(1, player, playerEntity -> playerEntity.broadcastBreakEvent(context.getHand()));
+                    level.setBlock(pos, modifiedState, Block.UPDATE_ALL_IMMEDIATE);
+                    stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
                 }
 
                 return InteractionResult.sidedSuccess(level.isClientSide);

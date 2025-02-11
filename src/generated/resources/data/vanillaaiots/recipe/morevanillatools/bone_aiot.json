@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:bone_sword"
+    },
+    {
+      "item": "morevanillatools:bone_pickaxe"
+    },
+    {
+      "item": "morevanillatools:bone_axe"
+    },
+    {
+      "item": "morevanillatools:bone_shovel"
+    },
+    {
+      "item": "morevanillatools:bone_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:bone_aiot"
+  }
+}

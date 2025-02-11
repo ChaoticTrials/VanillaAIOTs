@@ -20,21 +20,21 @@ public class ModConfig {
     public static class ToolValues {
 
         @Config
-        public static ConfigureableMaterial wood = ConfigureableMaterial.of(Tiers.WOOD);
+        public static ConfigurableMaterial wood = ConfigurableMaterial.of(Tiers.WOOD);
 
         @Config
-        public static ConfigureableMaterial stone = ConfigureableMaterial.of(Tiers.STONE);
+        public static ConfigurableMaterial stone = ConfigurableMaterial.of(Tiers.STONE);
 
         @Config
-        public static ConfigureableMaterial iron = ConfigureableMaterial.of(Tiers.IRON);
+        public static ConfigurableMaterial iron = ConfigurableMaterial.of(Tiers.IRON);
 
         @Config
-        public static ConfigureableMaterial gold = ConfigureableMaterial.of(Tiers.GOLD);
+        public static ConfigurableMaterial gold = ConfigurableMaterial.of(Tiers.GOLD);
 
         @Config
-        public static ConfigureableMaterial diamond = ConfigureableMaterial.of(Tiers.DIAMOND);
+        public static ConfigurableMaterial diamond = ConfigurableMaterial.of(Tiers.DIAMOND);
 
         @Config
-        public static ConfigureableMaterial netherite = ConfigureableMaterial.of(Tiers.NETHERITE);
+        public static ConfigurableMaterial netherite = ConfigurableMaterial.of(Tiers.NETHERITE);
     }
 }

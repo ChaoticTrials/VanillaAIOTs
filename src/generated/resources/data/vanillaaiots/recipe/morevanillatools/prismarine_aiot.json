@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:prismarine_sword"
+    },
+    {
+      "item": "morevanillatools:prismarine_pickaxe"
+    },
+    {
+      "item": "morevanillatools:prismarine_axe"
+    },
+    {
+      "item": "morevanillatools:prismarine_shovel"
+    },
+    {
+      "item": "morevanillatools:prismarine_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:prismarine_aiot"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:coal_sword"
+    },
+    {
+      "item": "morevanillatools:coal_pickaxe"
+    },
+    {
+      "item": "morevanillatools:coal_axe"
+    },
+    {
+      "item": "morevanillatools:coal_shovel"
+    },
+    {
+      "item": "morevanillatools:coal_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:coal_aiot"
+  }
+}

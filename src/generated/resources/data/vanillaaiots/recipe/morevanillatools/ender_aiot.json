@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:ender_sword"
+    },
+    {
+      "item": "morevanillatools:ender_pickaxe"
+    },
+    {
+      "item": "morevanillatools:ender_axe"
+    },
+    {
+      "item": "morevanillatools:ender_shovel"
+    },
+    {
+      "item": "morevanillatools:ender_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:ender_aiot"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:paper_sword"
+    },
+    {
+      "item": "morevanillatools:paper_pickaxe"
+    },
+    {
+      "item": "morevanillatools:paper_axe"
+    },
+    {
+      "item": "morevanillatools:paper_shovel"
+    },
+    {
+      "item": "morevanillatools:paper_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:paper_aiot"
+  }
+}

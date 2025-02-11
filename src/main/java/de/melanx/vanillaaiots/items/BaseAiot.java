@@ -2,10 +2,12 @@ package de.melanx.vanillaaiots.items;
 
 import de.melanx.vanillaaiots.compat.LibCompat;
 import de.melanx.vanillaaiots.data.AIOTTags;
+import de.melanx.vanillaaiots.registration.ModDataComponentTypes;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import de.melanx.vanillaaiots.util.ComponentUtil;
 import de.melanx.vanillaaiots.util.ToolUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -20,13 +22,12 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ToolAction;
-import net.minecraftforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -36,8 +37,8 @@ public class BaseAiot extends DiggerItem {
 
     private final boolean isVanilla;
 
-    public BaseAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
-        super(attackDamageModifier, attackSpeedModifier, tier, AIOTTags.MINEABLE_WITH_AIOT, properties);
+    public BaseAiot(Tier tier, Properties properties) {
+        super(tier, AIOTTags.MINEABLE_WITH_AIOT, properties.attributes(DiggerItem.createAttributes(tier, 3.5F, -2.6F)));
         this.isVanilla = tier == ToolMaterials.WOODEN
                 || tier == ToolMaterials.STONE
                 || tier == ToolMaterials.IRON
@@ -57,7 +58,7 @@ public class BaseAiot extends DiggerItem {
         boolean hoemode = isHoemode(item);
 
         InteractionResult result = InteractionResult.PASS;
-        for (ToolAction action : ToolActions.DEFAULT_AXE_ACTIONS) {
+        for (ItemAbility action : ItemAbilities.DEFAULT_AXE_ACTIONS) {
             if (result != InteractionResult.PASS) {
                 break;
             }
@@ -67,9 +68,9 @@ public class BaseAiot extends DiggerItem {
 
         if (result == InteractionResult.PASS) {
             if (hoemode) {
-                result = ToolUtil.toolUse(context, ToolActions.HOE_TILL);
+                result = ToolUtil.toolUse(context, ItemAbilities.HOE_TILL);
             } else {
-                result = ToolUtil.toolUse(context, ToolActions.SHOVEL_FLATTEN);
+                result = ToolUtil.toolUse(context, ItemAbilities.SHOVEL_FLATTEN);
             }
         }
 
@@ -122,39 +123,34 @@ public class BaseAiot extends DiggerItem {
     }
 
     @Override
-    public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
-        return ToolUtil.DEFAULT_AIOT_ACTIONS.contains(toolAction);
+    public boolean canPerformAction(@Nonnull ItemStack stack, @Nonnull ItemAbility toolAction) {
+        return ToolUtil.DEFAULT_AIOT_ABILITIES.contains(toolAction);
     }
 
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return (this.getTier() != ToolMaterials.SLIME || enchantment != Enchantments.KNOCKBACK)
-                && (enchantment.category == EnchantmentCategory.WEAPON || super.canApplyAtEnchantingTable(stack, enchantment));
-    }
-
-    @Override
-    public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
+    public void appendHoverText(@Nonnull ItemStack stack, @Nonnull TooltipContext context, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
         if (LibCompat.isMoreVanillaLibLoaded()) {
-            LibCompat.editHoverText(this, stack, level, tooltip, isAdvanced);
+            LibCompat.editHoverText(this, stack, context, tooltip, isAdvanced);
         }
 
-        super.appendHoverText(stack, level, tooltip, isAdvanced);
-    }
-
-    private static void setHoemode(ItemStack stack, boolean b) {
-        stack.getOrCreateTag().putBoolean("hoemode", b);
+        super.appendHoverText(stack, context, tooltip, isAdvanced);
     }
 
     @Override
-    public int getEnchantmentLevel(ItemStack stack, Enchantment enchantment) {
-        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseAiot item && item.getTier() == ToolMaterials.SLIME) {
+    public int getEnchantmentLevel(@Nonnull ItemStack stack, Holder<Enchantment> enchantment) {
+        if (enchantment.is(Enchantments.KNOCKBACK) && stack.getItem() instanceof BaseAiot item && item.getTier() == ToolMaterials.SLIME) {
             return 3;
         }
 
         return super.getEnchantmentLevel(stack, enchantment);
     }
 
+    private static void setHoemode(ItemStack stack, boolean enabled) {
+        stack.set(ModDataComponentTypes.hoeMode, enabled);
+    }
+
     private static boolean isHoemode(ItemStack stack) {
-        return stack.isEmpty() || !stack.getOrCreateTag().contains("hoemode") || stack.getOrCreateTag().getBoolean("hoemode");
+        Boolean isHoemode = stack.get(ModDataComponentTypes.hoeMode);
+        return isHoemode != null ? isHoemode : false;
     }
 }

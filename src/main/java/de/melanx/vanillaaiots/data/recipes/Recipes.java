@@ -1,6 +1,6 @@
 package de.melanx.vanillaaiots.data.recipes;
 
-import de.melanx.vanillaaiots.items.AIOTRegistry;
+import de.melanx.vanillaaiots.registration.AIOTRegistry;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.world.item.Items;
 import org.moddingx.libx.datagen.DatagenContext;

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:copper_sword"
+    },
+    {
+      "item": "morevanillatools:copper_pickaxe"
+    },
+    {
+      "item": "morevanillatools:copper_axe"
+    },
+    {
+      "item": "morevanillatools:copper_shovel"
+    },
+    {
+      "item": "morevanillatools:copper_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:copper_aiot"
+  }
+}

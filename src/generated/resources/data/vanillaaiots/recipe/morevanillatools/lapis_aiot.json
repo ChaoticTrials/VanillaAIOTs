@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "morevanillatools:lapis_sword"
+    },
+    {
+      "item": "morevanillatools:lapis_pickaxe"
+    },
+    {
+      "item": "morevanillatools:lapis_axe"
+    },
+    {
+      "item": "morevanillatools:lapis_shovel"
+    },
+    {
+      "item": "morevanillatools:lapis_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:lapis_aiot"
+  }
+}

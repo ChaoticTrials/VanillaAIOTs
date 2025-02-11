@@ -1,17 +1,15 @@
 package de.melanx.vanillaaiots;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
-import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
 import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
-import de.melanx.vanillaaiots.data.recipes.EnderiteRecipes;
 import de.melanx.vanillaaiots.data.recipes.Recipes;
 import de.melanx.vanillaaiots.data.recipes.SimplestCopperGearRecipes;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import de.melanx.vanillaaiots.registration.ModCreativeTab;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.moddingx.libx.datagen.DatagenSystem;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
@@ -23,10 +21,11 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     public static Logger LOGGER = LoggerFactory.getLogger(VanillaAIOTs.class);
     private static VanillaAIOTs instance;
+    private final ModCreativeTab creativeTab;
 
     public VanillaAIOTs() {
         instance = this;
-        CraftingHelper.register(VanillaCondition.SERIALIZER);
+        this.creativeTab = new ModCreativeTab(this);
 
         DatagenSystem.create(this, system -> {
             system.addDataProvider(AIOTTags::new);
@@ -34,7 +33,6 @@ public final class VanillaAIOTs extends ModXRegistration {
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
-            system.addDataProvider(EnderiteRecipes::new);
         });
 
         CompatHelper.loadTiers();
@@ -57,5 +55,9 @@ public final class VanillaAIOTs extends ModXRegistration {
 
     public static VanillaAIOTs getInstance() {
         return instance;
+    }
+
+    public static ModCreativeTab getCreativeTab() {
+        return instance.creativeTab;
     }
 }
