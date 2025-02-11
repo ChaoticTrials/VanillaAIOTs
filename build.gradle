@@ -72,7 +72,6 @@ mod.configure {
             require 'libx'
             optional 'morevanillalib'
             optional 'morevanillatools'
-            optional 'enderite-lieonlion'
             optional 'simplest-copper-gear'
         }
         curseforge {
