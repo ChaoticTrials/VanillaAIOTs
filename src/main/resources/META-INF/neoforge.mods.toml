@@ -1,4 +1,4 @@
-modLoader="javafml"
+modLoader = "javafml"
 loaderVersion = "[4,)"
 license = "${mod.license}"
 issueTrackerURL = "${mod.issue_url}"
@@ -8,43 +8,43 @@ modId = "${mod.modid}"
 version = "${mod.version}"
 displayName = "${mod.name}"
 displayURL = "${mod.source_url}"
-updateJSONURL="https://assets.melanx.de/updates/vanilla-aiots.json"
-authors="MelanX"
-description="""
+updateJSONURL = "https://assets.melanx.de/updates/vanilla-aiots.json"
+authors = "MelanX"
+description = """
 Adds a ton of new AIOTs to the game! AIOT stands for \"All In One Tool\".
 """
 
 [[dependencies.${ mod.modid }]]
-modId = "neoforge"
-    mandatory=true
-versionRange = "[${mod.neoforge},)"
-    ordering="NONE"
-    side="BOTH"
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[${mod.neoforge},)"
+    ordering = "NONE"
+    side = "BOTH"
 
 [[dependencies.${ mod.modid }]]
-    modId="minecraft"
-    mandatory=true
-versionRange = "[${mod.minecraft},)"
-    ordering="NONE"
-    side="BOTH"
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[${mod.minecraft},)"
+    ordering = "NONE"
+    side = "BOTH"
 
 [[dependencies.${ mod.modid }]]
     modId="libx"
-    mandatory=true
-versionRange = "[1.21.1-6.0.0,)"
-    ordering="AFTER"
-    side="BOTH"
+    type = "required"
+    versionRange = "[1.21.1-6.0.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
 
 [[dependencies.${ mod.modid }]]
-    modId="morevanillatools"
-    mandatory=false
-versionRange = "[21.1,)"
-    ordering="BEFORE"
-    side="BOTH"
+    modId = "morevanillatools"
+    type = "optional"
+    versionRange = "[21.1,)"
+    ordering = "BEFORE"
+    side = "BOTH"
 
-[[dependencies.vanillaaiots]]
-    modId="morevanillalib"
-    mandatory=false
-versionRange = "[21.1,)"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.${ mod.modid }]]
+    modId = "morevanillalib"
+    type = "optional"
+    versionRange = "[21.1,)"
+    ordering = "NONE"
+    side = "BOTH"
