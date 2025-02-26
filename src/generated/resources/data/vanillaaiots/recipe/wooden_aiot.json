@@ -3,19 +3,39 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "minecraft:wooden_sword"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:wooden_sword"
     },
     {
-      "item": "minecraft:wooden_pickaxe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:wooden_pickaxe"
     },
     {
-      "item": "minecraft:wooden_axe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:wooden_axe"
     },
     {
-      "item": "minecraft:wooden_shovel"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:wooden_shovel"
     },
     {
-      "item": "minecraft:wooden_hoe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:wooden_hoe"
     }
   ],
   "result": {

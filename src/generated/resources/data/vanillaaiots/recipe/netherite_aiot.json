@@ -3,19 +3,39 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "minecraft:netherite_sword"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:netherite_sword"
     },
     {
-      "item": "minecraft:netherite_pickaxe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:netherite_pickaxe"
     },
     {
-      "item": "minecraft:netherite_axe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:netherite_axe"
     },
     {
-      "item": "minecraft:netherite_shovel"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:netherite_shovel"
     },
     {
-      "item": "minecraft:netherite_hoe"
+      "type": "neoforge:components",
+      "components": {
+        "minecraft:damage": 0
+      },
+      "items": "minecraft:netherite_hoe"
     }
   ],
   "result": {
