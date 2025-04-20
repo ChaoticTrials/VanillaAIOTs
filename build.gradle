@@ -31,6 +31,11 @@ var jeiVersion = '19.21.0.247'
 var morevanillalibVersion = '21.1.2'
 var morevanillatoolsVersion = '21.1.1'
 var simplestcoppergearVersion = '1.21.1-1.0.7'
+var aetherVersion = '1.21.1-1.5.8-neoforge'
+var deepaetherVersion = '1.21.1-1.1.2'
+var aetherlostcontentVersion = 'no 1.21 version yet' // todo
+var owoVersion = '0.12.15.1-beta.3+1.21'
+var structuregelapiVersion = 'dependency of aether lost content, not required yet' // todo
 
 mod.configure {
     modid 'vanillaaiots'
@@ -79,6 +84,8 @@ mod.configure {
             optional 'morevanillalib'
             optional 'morevanillatools'
             optional 'simplest-copper-gear'
+            optional 'aether'
+            optional 'deep-aether'
         }
         curseforge {
             projectId 482123
@@ -98,4 +105,10 @@ dependencies {
     implementation "mezz.jei:jei-1.${baseVersion}-neoforge:${jeiVersion}"
 
     implementation "maven.modrinth:simplest-copper-gear:${simplestcoppergearVersion}"
+    implementation "maven.modrinth:aether:${aetherVersion}"
+    implementation "maven.modrinth:deep-aether:${deepaetherVersion}"
+//    implementation "maven.modrinth:aether-lost-content:${aetherlostcontentVersion}"
+
+    implementation "maven.modrinth:owo-lib:${owoVersion}"
+//    runtimeOnly "maven.modrinth:structure-gel-api:${structuregelapiVersion}"
 }

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "aether:skyroot_sword"
+    },
+    {
+      "item": "aether:skyroot_pickaxe"
+    },
+    {
+      "item": "aether:skyroot_axe"
+    },
+    {
+      "item": "aether:skyroot_shovel"
+    },
+    {
+      "item": "aether:skyroot_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:skyroot_aiot"
+  }
+}

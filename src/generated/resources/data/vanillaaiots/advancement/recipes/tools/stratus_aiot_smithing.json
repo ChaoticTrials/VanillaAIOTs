@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "deep_aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_item0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaaiots:gravitite_aiot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaaiots:stratus_aiot_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_item0"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaaiots:stratus_aiot_smithing"
+    ]
+  }
+}

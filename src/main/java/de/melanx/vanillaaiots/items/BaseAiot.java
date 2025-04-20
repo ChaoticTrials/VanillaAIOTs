@@ -1,5 +1,6 @@
 package de.melanx.vanillaaiots.items;
 
+import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.compat.LibCompat;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.registration.ModDataComponentTypes;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -35,10 +37,16 @@ import java.util.List;
 
 public class BaseAiot extends DiggerItem {
 
+    public static final float ATTACK_DAMAGE = 3.5F;
+    public static final float ATTACK_SPEED = -2.6F;
     private final boolean isVanilla;
 
     public BaseAiot(Tier tier, Properties properties) {
-        super(tier, AIOTTags.MINEABLE_WITH_AIOT, properties.attributes(DiggerItem.createAttributes(tier, 3.5F, -2.6F)));
+        this(tier, properties, DiggerItem.createAttributes(tier, ATTACK_DAMAGE, ATTACK_SPEED));
+    }
+
+    public BaseAiot(Tier tier, Properties properties, ItemAttributeModifiers attributes) {
+        super(tier, AIOTTags.MINEABLE_WITH_AIOT, properties.attributes(CompatHelper.applyAdditionalAttributes(tier, attributes)));
         this.isVanilla = tier == ToolMaterials.WOODEN
                 || tier == ToolMaterials.STONE
                 || tier == ToolMaterials.IRON

@@ -3,9 +3,7 @@ package de.melanx.vanillaaiots;
 import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
-import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
-import de.melanx.vanillaaiots.data.recipes.Recipes;
-import de.melanx.vanillaaiots.data.recipes.SimplestCopperGearRecipes;
+import de.melanx.vanillaaiots.data.recipes.*;
 import de.melanx.vanillaaiots.registration.ModCreativeTab;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -33,6 +31,9 @@ public final class VanillaAIOTs extends ModXRegistration {
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
+//            system.addDataProvider(AetherLostContentRecipes::new);
+            system.addDataProvider(AetherRecipes::new);
+            system.addDataProvider(DeepAetherRecipes::new);
         });
 
         CompatHelper.loadTiers();

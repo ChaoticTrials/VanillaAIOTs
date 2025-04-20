@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "deep_aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "deep_aether:stratus_ingot"
+  },
+  "base": {
+    "item": "vanillaaiots:gravitite_aiot"
+  },
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:stratus_aiot"
+  },
+  "template": {
+    "item": "deep_aether:stratus_smithing_template"
+  }
+}

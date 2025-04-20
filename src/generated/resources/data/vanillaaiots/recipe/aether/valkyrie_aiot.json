@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "aether:valkyrie_lance"
+    },
+    {
+      "item": "aether:valkyrie_pickaxe"
+    },
+    {
+      "item": "aether:valkyrie_axe"
+    },
+    {
+      "item": "aether:valkyrie_shovel"
+    },
+    {
+      "item": "aether:valkyrie_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:valkyrie_aiot"
+  }
+}

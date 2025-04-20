@@ -9,7 +9,11 @@ import org.moddingx.libx.config.validate.FloatRange;
 @RegisterConfig
 public class ModConfig {
 
-    @Config("This is only relevant when MoreVanillaTools is installed")
+    @Config({"This is only relevant when one of the following mods is installed:",
+            "  - MoreVanillaTools",
+            "  - Simple Copper Gear",
+            "  - Aether",
+            "  - Deep Aether"})
     public static boolean vanillaOnly = false;
 
     @Config({"Multiplier to calculate the durability", "Single tool durability * this value = durability"})

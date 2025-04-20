@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "deep_aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "deep_aether:skyjade_sword"
+    },
+    {
+      "item": "deep_aether:skyjade_pickaxe"
+    },
+    {
+      "item": "deep_aether:skyjade_axe"
+    },
+    {
+      "item": "deep_aether:skyjade_shovel"
+    },
+    {
+      "item": "deep_aether:skyjade_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:skyjade_aiot"
+  }
+}

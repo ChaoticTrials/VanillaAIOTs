@@ -22,6 +22,15 @@
   "item.vanillaaiots.redstone_aiot": "Redstone AIOT",
   "item.vanillaaiots.slime_aiot": "Schleim AIOT",
 
+  "item.vanillaaiots.skyroot_aiot": "Himmelswurzel AIOT",
+  "item.vanillaaiots.holystone_aiot": "Heiligstein AIOT",
+  "item.vanillaaiots.zanite_aiot": "Zanit AIOT",
+  "item.vanillaaiots.gravitite_aiot": "Gravitit AIOT",
+  "item.vanillaaiots.valkyrie_aiot": "Walküre AIOT",
+  "item.vanillaaiots.phoenix_aiot": "Phönix AIOT",
+  "item.vanillaaiots.skyjade_aiot": "Himmelsjade AIOT",
+  "item.vanillaaiots.stratus_aiot": "Stratus AIOT",
+
   "tooltip.vanillaaiots.toggleMode": "Modus",
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",

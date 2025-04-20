@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "aether:holystone_sword"
+    },
+    {
+      "item": "aether:holystone_pickaxe"
+    },
+    {
+      "item": "aether:holystone_axe"
+    },
+    {
+      "item": "aether:holystone_shovel"
+    },
+    {
+      "item": "aether:holystone_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:holystone_aiot"
+  }
+}

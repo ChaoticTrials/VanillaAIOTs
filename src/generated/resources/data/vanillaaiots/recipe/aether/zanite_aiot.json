@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aether"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "aether:zanite_sword"
+    },
+    {
+      "item": "aether:zanite_pickaxe"
+    },
+    {
+      "item": "aether:zanite_axe"
+    },
+    {
+      "item": "aether:zanite_shovel"
+    },
+    {
+      "item": "aether:zanite_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaaiots:zanite_aiot"
+  }
+}
