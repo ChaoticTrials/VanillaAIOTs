@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "aether:zanite_sword"
+          },
+          {
+            "item": "aether:zanite_pickaxe"
+          },
+          {
+            "item": "aether:zanite_axe"
+          },
+          {
+            "item": "aether:zanite_shovel"
+          },
+          {
+            "item": "aether:zanite_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:zanite_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

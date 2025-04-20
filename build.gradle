@@ -22,6 +22,18 @@ repositories {
         name = "MelanX"
         url = "https://maven.melanx.de"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +44,11 @@ dependencies {
     implementation fg.deobf("de.melanx:MoreVanillaTools:1.20.1-6.0.0")
 
     implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.0.0.12")
+    implementation fg.deobf("maven.modrinth:aether:2411kUqF")
+    implementation fg.deobf("maven.modrinth:deep-aether:YNkNiqxV")
+    implementation fg.deobf("maven.modrinth:aether-lost-content:PVl7uKx1")
+    runtimeOnly fg.deobf("maven.modrinth:terrablender:zGconCHG")
+    runtimeOnly fg.deobf("maven.modrinth:structure-gel-api:xavY0MZc")
 
     implementation curse.mod(984803, 5415723) // Simplest Copper Gear v1.0.5
     implementation curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1

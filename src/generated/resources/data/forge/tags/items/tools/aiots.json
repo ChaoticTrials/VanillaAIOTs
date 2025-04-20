@@ -10,6 +10,8 @@
     "vanillaaiots:fiery_aiot",
     "vanillaaiots:glowstone_aiot",
     "vanillaaiots:golden_aiot",
+    "vanillaaiots:gravitite_aiot",
+    "vanillaaiots:holystone_aiot",
     "vanillaaiots:iron_aiot",
     "vanillaaiots:lapis_aiot",
     "vanillaaiots:nether_aiot",
@@ -17,11 +19,17 @@
     "vanillaaiots:obsidian_aiot",
     "vanillaaiots:obsidian_infused_enderite_aiot",
     "vanillaaiots:paper_aiot",
+    "vanillaaiots:phoenix_aiot",
     "vanillaaiots:prismarine_aiot",
     "vanillaaiots:quartz_aiot",
     "vanillaaiots:redstone_aiot",
+    "vanillaaiots:skyjade_aiot",
+    "vanillaaiots:skyroot_aiot",
     "vanillaaiots:slime_aiot",
     "vanillaaiots:stone_aiot",
-    "vanillaaiots:wooden_aiot"
+    "vanillaaiots:stratus_aiot",
+    "vanillaaiots:valkyrie_aiot",
+    "vanillaaiots:wooden_aiot",
+    "vanillaaiots:zanite_aiot"
   ]
 }

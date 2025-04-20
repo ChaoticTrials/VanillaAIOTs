@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "aether:gravitite_sword"
+          },
+          {
+            "item": "aether:gravitite_pickaxe"
+          },
+          {
+            "item": "aether:gravitite_axe"
+          },
+          {
+            "item": "aether:gravitite_shovel"
+          },
+          {
+            "item": "aether:gravitite_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:gravitite_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

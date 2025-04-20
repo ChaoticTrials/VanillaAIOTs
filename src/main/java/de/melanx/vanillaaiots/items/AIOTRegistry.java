@@ -38,6 +38,17 @@ public class AIOTRegistry {
     public static final Item enderiteAiot = AIOTRegistry.makeItem(CompatHelper.ENDERITE, 0, -2.4F, ToolMaterials.ENDERITE, new Item.Properties());
     public static final Item obsidianInfusedEnderiteAiot = AIOTRegistry.makeItem(CompatHelper.ENDERITE, 0, -2.4F, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, new Item.Properties());
 
+    public static final Item skyrootAiot = AIOTRegistry.makeItem(CompatHelper.AETHER, 6, -2.4F, ToolMaterials.SKYROOT, new Item.Properties());
+    public static final Item holystoneAiot = AIOTRegistry.makeItem(CompatHelper.AETHER, 7, -2.4F, ToolMaterials.HOLYSTONE, new Item.Properties());
+    public static final Item zaniteAiot = AIOTRegistry.makeItem(CompatHelper.AETHER, 6, -2.4F, ToolMaterials.ZANITE, new Item.Properties());
+    public static final Item gravititeAiot = AIOTRegistry.makeItem(CompatHelper.AETHER, 5, -2.4F, ToolMaterials.GRAVITITE, new Item.Properties());
+    public static final Item valkyrieAiot = AIOTRegistry.makeItem(CompatHelper.AETHER, 5, -2.4F, ToolMaterials.VALKYRIE, new Item.Properties());
+
+    public static final Item phoenixAiot = AIOTRegistry.makeItem(CompatHelper.AETHER_LOST_CONTENT, 7, -2.4F, ToolMaterials.PHOENIX, new Item.Properties());
+
+    public static final Item skyjadeAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, 1, -2.4F, ToolMaterials.SKYJADE, new Item.Properties());
+    public static final Item stratusAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, 5, -2.4F, ToolMaterials.STRATUS, new Item.Properties());
+
     public static Item makeItem(String modid, float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Item.Properties properties) {
         return AIOTRegistry.makeItem(List.of(modid), attackDamageModifier, attackSpeedModifier, tier, properties);
     }

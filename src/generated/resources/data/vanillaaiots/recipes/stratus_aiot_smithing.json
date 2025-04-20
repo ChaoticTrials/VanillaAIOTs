@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:smithing_transform",
+        "addition": {
+          "item": "deep_aether:stratus_ingot"
+        },
+        "base": {
+          "item": "vanillaaiots:gravitite_aiot"
+        },
+        "result": {
+          "item": "vanillaaiots:stratus_aiot"
+        },
+        "template": {
+          "item": "deep_aether:stratus_smithing_template"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

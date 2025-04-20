@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "lost_aether_content"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "lost_aether_content:phoenix_sword"
+          },
+          {
+            "item": "lost_aether_content:phoenix_pickaxe"
+          },
+          {
+            "item": "lost_aether_content:phoenix_axe"
+          },
+          {
+            "item": "lost_aether_content:phoenix_shovel"
+          },
+          {
+            "item": "lost_aether_content:phoenix_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:phoenix_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

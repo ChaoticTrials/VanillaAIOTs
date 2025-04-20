@@ -1,5 +1,7 @@
 package de.melanx.vanillaaiots.compat;
 
+import com.aetherteam.aether.item.combat.AetherItemTiers;
+import com.legacy.lost_aether.item.util.LCItemTier;
 import de.melanx.MoreVanillaTools.items.ToolMaterials;
 import de.melanx.vanillaaiots.VanillaAIOTs;
 import de.melanx.vanillaaiots.config.ModConfig;
@@ -8,7 +10,6 @@ import de.melanx.vanillaaiots.items.DummyItem;
 import io.github.lieonlion.enderite.init.ToolMaterialsInit;
 import net.indevo.simplest_copper_gear.item.ModToolTiers;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
+import teamrazor.deepaether.init.DATiers;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -25,6 +27,9 @@ public class CompatHelper {
     public static String ENDERITE = "lolenderite";
     public static String MOREVANILLATOOLS = "morevanillatools";
     public static String SIMPLEST_COPPER_GEAR = "simplest_copper_gear";
+    public static String AETHER = "aether";
+    public static String AETHER_LOST_CONTENT = "lost_aether_content";
+    public static String DEEP_AETHER = "deep_aether";
     private static final Map<String, Tier> LOADED_TIERS = new HashMap<>();
 
     public static void loadTiers() {
@@ -35,6 +40,26 @@ public class CompatHelper {
                 LOADED_TIERS.putAll(map);
             }
         });
+
+        if (ModList.get().isLoaded(AETHER)) {
+            VanillaAIOTs.LOGGER.info(AETHER + " is loaded.");
+            LOADED_TIERS.put("skyroot", AetherItemTiers.SKYROOT);
+            LOADED_TIERS.put("holystone", AetherItemTiers.HOLYSTONE);
+            LOADED_TIERS.put("zanite", AetherItemTiers.ZANITE);
+            LOADED_TIERS.put("gravitite", AetherItemTiers.GRAVITITE);
+            LOADED_TIERS.put("valkyrie", AetherItemTiers.VALKYRIE);
+        }
+
+        if (ModList.get().isLoaded(AETHER_LOST_CONTENT)) {
+            VanillaAIOTs.LOGGER.info(AETHER_LOST_CONTENT + " is loaded.");
+            LOADED_TIERS.put("phoenix", LCItemTier.PHOENIX);
+        }
+
+        if (ModList.get().isLoaded(DEEP_AETHER)) {
+            VanillaAIOTs.LOGGER.info(DEEP_AETHER + " is loaded.");
+            LOADED_TIERS.put("skyjade", DATiers.SKYJADE);
+            LOADED_TIERS.put("stratus", DATiers.STRATUS);
+        }
 
         if (ModList.get().isLoaded(SIMPLEST_COPPER_GEAR)) {
             VanillaAIOTs.LOGGER.info(SIMPLEST_COPPER_GEAR + " is loaded.");
@@ -87,14 +112,14 @@ public class CompatHelper {
         return CompatHelper.getTierFor(tier).getUses();
     }
 
-    public static Ingredient getIngredientByIds(ResourceLocation... ids) {
+    public static Ingredient getIngredientByIds(ItemOrTagId... ids) {
         Set<Ingredient> ingredients = new HashSet<>();
-        for (ResourceLocation id : ids) {
-            if (id.getNamespace().startsWith("#")) {
-                TagKey<Item> tag = TagKey.create(Registries.ITEM, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
+        for (ItemOrTagId id : ids) {
+            if (id.isTag()) {
+                TagKey<Item> tag = TagKey.create(Registries.ITEM, id.getLocation());
                 ingredients.add(Ingredient.of(tag));
             } else {
-                Item item = ForgeRegistries.ITEMS.getValue(id);
+                Item item = ForgeRegistries.ITEMS.getValue(id.getLocation());
                 if (item == null) {
                     VanillaAIOTs.LOGGER.info("Item doesn't exist: " + id);
                 }

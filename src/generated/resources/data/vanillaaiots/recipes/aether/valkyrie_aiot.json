@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "aether:valkyrie_lance"
+          },
+          {
+            "item": "aether:valkyrie_pickaxe"
+          },
+          {
+            "item": "aether:valkyrie_axe"
+          },
+          {
+            "item": "aether:valkyrie_shovel"
+          },
+          {
+            "item": "aether:valkyrie_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:valkyrie_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

@@ -4,10 +4,7 @@ import de.melanx.vanillaaiots.compat.CompatHelper;
 import de.melanx.vanillaaiots.config.VanillaCondition;
 import de.melanx.vanillaaiots.data.AIOTTags;
 import de.melanx.vanillaaiots.data.ItemModels;
-import de.melanx.vanillaaiots.data.recipes.ConditionalRecipes;
-import de.melanx.vanillaaiots.data.recipes.EnderiteRecipes;
-import de.melanx.vanillaaiots.data.recipes.Recipes;
-import de.melanx.vanillaaiots.data.recipes.SimplestCopperGearRecipes;
+import de.melanx.vanillaaiots.data.recipes.*;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,6 +32,9 @@ public final class VanillaAIOTs extends ModXRegistration {
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
             system.addDataProvider(EnderiteRecipes::new);
+            system.addDataProvider(AetherLostContentRecipes::new);
+            system.addDataProvider(AetherRecipes::new);
+            system.addDataProvider(DeepAetherRecipes::new);
         });
 
         CompatHelper.loadTiers();

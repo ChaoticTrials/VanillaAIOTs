@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "aether:holystone_sword"
+          },
+          {
+            "item": "aether:holystone_pickaxe"
+          },
+          {
+            "item": "aether:holystone_axe"
+          },
+          {
+            "item": "aether:holystone_shovel"
+          },
+          {
+            "item": "aether:holystone_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:holystone_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

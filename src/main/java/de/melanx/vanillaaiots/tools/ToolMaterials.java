@@ -1,10 +1,10 @@
 package de.melanx.vanillaaiots.tools;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
+import de.melanx.vanillaaiots.compat.ItemOrTagId;
 import de.melanx.vanillaaiots.config.ConfigureableMaterial;
 import de.melanx.vanillaaiots.config.ModConfig;
 import de.melanx.vanillaaiots.data.AIOTTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
@@ -43,8 +43,19 @@ public enum ToolMaterials implements Tier {
     REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
     SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS)),
 
-    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY),
-    OBSIDIAN_INFUSED_ENDERITE("obsidian_infused_enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "obsidian_infused_enderite_ingot")) : Ingredient.EMPTY);
+    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY),
+    OBSIDIAN_INFUSED_ENDERITE("obsidian_infused_enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.ENDERITE, "obsidian_infused_enderite_ingot")) : Ingredient.EMPTY),
+
+    SKYROOT("skyroot", () -> CompatHelper.isLoaded(CompatHelper.AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.AETHER, "skyroot_repairing", true)) : Ingredient.EMPTY),
+    HOLYSTONE("holystone", () -> CompatHelper.isLoaded(CompatHelper.AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.AETHER, "holystone_repairing", true)) : Ingredient.EMPTY),
+    ZANITE("zanite", () -> CompatHelper.isLoaded(CompatHelper.AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.AETHER, "zanite_repairing", true)) : Ingredient.EMPTY),
+    GRAVITITE("gravitite", () -> CompatHelper.isLoaded(CompatHelper.AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.AETHER, "gravitite_repairing", true)) : Ingredient.EMPTY),
+    VALKYRIE("valkyrie", () -> CompatHelper.isLoaded(CompatHelper.AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.AETHER, "valkyrie_repairing", true)) : Ingredient.EMPTY),
+
+    PHOENIX("phoenix", () -> Ingredient.EMPTY),
+
+    SKYJADE("skyjade", () -> CompatHelper.isLoaded(CompatHelper.DEEP_AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.DEEP_AETHER, "skyjade_repairing", true)) : Ingredient.EMPTY),
+    STRATUS("stratus", () -> CompatHelper.isLoaded(CompatHelper.DEEP_AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.DEEP_AETHER, "stratus_repairing", true)) : Ingredient.EMPTY);
 
     private final ConfigureableMaterial material;
     private final int durability;
@@ -98,4 +109,4 @@ public enum ToolMaterials implements Tier {
     public TagKey<Block> getTag() {
         return AIOTTags.MINEABLE_WITH_AIOT;
     }
-}
+    }

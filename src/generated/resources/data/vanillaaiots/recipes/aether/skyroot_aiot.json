@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        },
+        {
+          "type": "vanillaaiots:vanilla_only"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "equipment",
+        "ingredients": [
+          {
+            "item": "aether:skyroot_sword"
+          },
+          {
+            "item": "aether:skyroot_pickaxe"
+          },
+          {
+            "item": "aether:skyroot_axe"
+          },
+          {
+            "item": "aether:skyroot_shovel"
+          },
+          {
+            "item": "aether:skyroot_hoe"
+          }
+        ],
+        "result": {
+          "item": "vanillaaiots:skyroot_aiot"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

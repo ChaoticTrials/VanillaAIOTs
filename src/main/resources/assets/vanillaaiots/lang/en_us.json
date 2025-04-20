@@ -25,6 +25,15 @@
   "item.vanillaaiots.enderite_aiot": "Enderite AIOT",
   "item.vanillaaiots.obsidian_infused_enderite_aiot": "Obsidian Infused Enderite AIOT",
 
+  "item.vanillaaiots.skyroot_aiot": "Skyroot AIOT",
+  "item.vanillaaiots.holystone_aiot": "Holystone AIOT",
+  "item.vanillaaiots.zanite_aiot": "Zanite AIOT",
+  "item.vanillaaiots.gravitite_aiot": "Gravitite AIOT",
+  "item.vanillaaiots.valkyrie_aiot": "Valkyrie AIOT",
+  "item.vanillaaiots.phoenix_aiot": "Phoenix AIOT",
+  "item.vanillaaiots.skyjade_aiot": "Skyjade AIOT",
+  "item.vanillaaiots.stratus_aiot": "Stratus AIOT",
+
   "tooltip.vanillaaiots.toggleMode": "Mode",
   "tooltip.vanillaaiots.pathMode": "Create %s",
   "tooltip.vanillaaiots.hoeMode": "Till soil",
