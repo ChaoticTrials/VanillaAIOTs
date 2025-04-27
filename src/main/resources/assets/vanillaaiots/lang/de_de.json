@@ -34,6 +34,15 @@
   "item.vanillaaiots.skyjade_aiot": "Himmelsjade AIOT",
   "item.vanillaaiots.stratus_aiot": "Stratus AIOT",
 
+  "lore.item.vanillaaiots.skyroot_aiot": "Verdoppelt die Ausbeute der meisten Blöcke und Monster, was es zu einem ausgezeichneten Werkzeug für Anfänger macht. Trotz seiner geringen Haltbarkeit ist es perfekt zum Sammeln von Ressourcen, besonders in Kombination mit Verzauberungen wie Glück oder Plünderung.",
+  "lore.item.vanillaaiots.holystone_aiot": "Gräbt schneller als Skyroot-Werkzeuge und hat die Chance, zufällig Ambrosium-Scherben beim Abbauen von Blöcken oder Angreifen von Gegnern fallen zu lassen.",
+  "lore.item.vanillaaiots.zanite_aiot": "Dieses Werkzeug der mittleren Stufe beginnt mit Effizienz und Schaden auf Eisenniveau, wird aber mit abnehmender Haltbarkeit schneller und stärker - bis zur doppelten Kraft! Sei vorsichtig bei der Reparatur, da es dann wieder in seinen langsameren, schwächeren Zustand zurückkehrt.",
+  "lore.item.vanillaaiots.gravitite_aiot": "Teil der besten Werkzeugstufe des Aethers. Dieses mächtige AIOT kann Blöcke mit einem Rechtsklick schweben lassen, Goldene Eichenholzstämme für Goldenen Bernstein abbauen und Feinde beim Angriff in die Luft schleudern, was erheblichen Schaden verursacht!",
+  "lore.item.vanillaaiots.valkyrie_aiot": "Ein einzigartiges Werkzeug aus dem Silbernen Verlies mit einer unglaublich großen Reichweite, fast doppelt so weit wie normal! Es verfügt über hohe Angriffskraft, aber mit einer deutlichen Abklingzeit. Hervorragend geeignet, um Verliesbosse aus sicherer Entfernung zu besiegen.",
+  "lore.item.vanillaaiots.phoenix_aiot": "Das Metall dieses Werkzeugs ist glühend heiß und schmilzt Erze sofort, verkohlt Holz bei Berührung und kocht Feldfrüchte beim Ernten. Wenn es zum Angriff auf brennende Feinde verwendet wird, verstärkt es seine Kraft um 20%!",
+  "lore.item.vanillaaiots.skyjade_aiot": "Eines der mittleren Werkzeuge des Aethers. Arbeitet schneller als Diamant, wird aber langsamer und weniger effektiv, wenn die Haltbarkeit abnimmt. Der Angriffsschaden beginnt auf Netherit-Niveau, sinkt aber bei niedriger Haltbarkeit auf Holz-Niveau.",
+  "lore.item.vanillaaiots.stratus_aiot": "Eine Verbesserung der Gravitite-Stufe. Es kann Blöcke mit Rechtsklick schweben lassen, Goldene Eichenholzstämme für Goldenen Bernstein abbauen und Feinde beim Angriff in die Luft schleudern. Mit den richtigen Verzauberungen kann es bestimmte Blöcke sofort abbauen!",
+
   "tooltip.vanillaaiots.toggleMode": "Modus",
   "tooltip.vanillaaiots.pathMode": "%s erschaffen",
   "tooltip.vanillaaiots.hoeMode": "Acker bestellen",
