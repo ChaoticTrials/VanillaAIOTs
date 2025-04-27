@@ -1,7 +1,9 @@
 package de.melanx.vanillaaiots.data;
 
+import com.aetherteam.aether.AetherTags;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.vanillaaiots.items.BaseAiot;
+import de.melanx.vanillaaiots.registration.AIOTRegistry;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -40,6 +42,24 @@ public class AIOTTags extends CommonTagsProviderBase {
         this.item(ItemTags.MINING_LOOT_ENCHANTABLE).addTag(TOOLS_AIOTS);
         this.item(ItemTags.DURABILITY_ENCHANTABLE).addTag(TOOLS_AIOTS);
 //        this.item(LCTags.Items.PHOENIX_TOOLS).add(AIOTRegistry.phoenixAiot); todo aether lost content
+        this.item(Tags.Items.TOOLS).addTag(TOOLS_AIOTS);
+        this.item(AetherTags.Items.GOLDEN_AMBER_HARVESTERS).add(
+                AIOTRegistry.zaniteAiot,
+                AIOTRegistry.gravititeAiot,
+                AIOTRegistry.valkyrieAiot,
+                AIOTRegistry.stratusAiot
+        );
+        this.item(AetherTags.Items.TREATED_AS_AETHER_ITEM).add(
+                AIOTRegistry.skyrootAiot,
+                AIOTRegistry.holystoneAiot,
+                AIOTRegistry.zaniteAiot,
+                AIOTRegistry.gravititeAiot,
+                AIOTRegistry.valkyrieAiot,
+                AIOTRegistry.phoenixAiot,
+                AIOTRegistry.skyjadeAiot,
+                AIOTRegistry.stratusAiot
+        );
+        this.item(AetherTags.Items.SLIDER_DAMAGING_ITEMS).addTag(TOOLS_AIOTS);
     }
 
     @Override
