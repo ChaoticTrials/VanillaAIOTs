@@ -31,6 +31,15 @@
   "item.vanillaaiots.skyjade_aiot": "Skyjade AIOT",
   "item.vanillaaiots.stratus_aiot": "Stratus AIOT",
 
+  "lore.item.vanillaaiots.skyroot_aiot": "Doubles drops from most blocks and mobs, making it an excellent tool for beginners. Despite its low durability, it's perfect for collecting resources when combined with enchantments like Fortune or Looting.",
+  "lore.item.vanillaaiots.holystone_aiot": "Mines faster than Skyroot tools and has the chance to drop random Ambrosium Shards during use, whether harvesting blocks or attacking mobs.",
+  "lore.item.vanillaaiots.zanite_aiot": "This mid-tier tool starts at iron level efficiency and damage, but as its durability decreases, it becomes faster and stronger - up to twice its original power! Be careful repairing it though, as it will return to its slower, weaker state.",
+  "lore.item.vanillaaiots.gravitite_aiot": "Part of the Aether's best tool tier. This powerful AIOT can make blocks float with a right-click, mine Golden Oak Logs for Golden Amber, and fling enemies into the air when attacking, causing significant damage!",
+  "lore.item.vanillaaiots.valkyrie_aiot": "A tool unique to the Silver Dungeon with an incredibly far reach, almost double the normal distance! It features high attack power but with a significant attack cooldown. Excellent for defeating dungeon bosses from a safer distance.",
+  "lore.item.vanillaaiots.phoenix_aiot": "The metal of this tool is molten hot, smelting ores instantly, charring wood on contact, and cooking crops when harvested. If used to attack enemies that are burning, it amplifies its power by 20%!",
+  "lore.item.vanillaaiots.skyjade_aiot": "One of Aether's mid-tier tools. Works faster than diamond, but becomes slower and less effective as its durability decreases. The attack damage starts at Netherite level but will drop to Wood level when durability is low.",
+  "lore.item.vanillaaiots.stratus_aiot": "An upgrade to the Gravitite tier. It can make blocks float with right-click, mine Golden Oak logs for Golden Amber, and fling enemies into the air when attacking. With the right enchantments, it can instantly break certain blocks!",
+
   "tooltip.vanillaaiots.toggleMode": "Mode",
   "tooltip.vanillaaiots.pathMode": "Create %s",
   "tooltip.vanillaaiots.hoeMode": "Till soil",
