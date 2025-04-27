@@ -1,11 +1,14 @@
 package de.melanx.vanillaaiots.registration;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
+import de.melanx.vanillaaiots.compat.aether.AetherAIOTs;
+import de.melanx.vanillaaiots.compat.aether.DeepAetherAIOTs;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.items.DummyItem;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.fml.ModList;
 import org.moddingx.libx.annotation.registration.RegisterClass;
 
@@ -63,9 +66,16 @@ public class AIOTRegistry {
 
     public static Item makeItem(List<String> modids, ToolMaterials tier, Item.Properties properties, float attackDamage, float attackSpeed) {
         for (String modid : modids) {
-            if (ModList.get().isLoaded(modid)) {
-                return new BaseAiot(tier, properties, DiggerItem.createAttributes(tier, attackDamage, attackSpeed));
+            if (!ModList.get().isLoaded(modid)) {
+            continue;
             }
+
+            ItemAttributeModifiers attributes = DiggerItem.createAttributes(tier, attackDamage, attackSpeed);
+            return switch (tier) {
+                case SKYROOT, HOLYSTONE, ZANITE, GRAVITITE, VALKYRIE -> AetherAIOTs.getAetherAiot(tier, properties, attributes);
+                case SKYJADE, STRATUS -> DeepAetherAIOTs.getDeepAetherAiot(tier, properties, attributes);
+                default -> new BaseAiot(tier, properties, attributes);
+            };
         }
 
         return new DummyItem(modids);
