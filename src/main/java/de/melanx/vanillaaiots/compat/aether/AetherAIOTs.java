@@ -1,10 +1,15 @@
 package de.melanx.vanillaaiots.compat.aether;
 
 import com.aetherteam.aether.item.tools.abilities.*;
+import com.google.common.collect.Multimap;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 
@@ -61,6 +66,11 @@ public class AetherAIOTs {
 
         public ValkyrieAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
             super(attackDamageModifier, attackSpeedModifier, tier, properties);
+        }
+
+        @Override
+        public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
+            return this.extendReachModifier(super.getAttributeModifiers(slot, stack), slot);
         }
     }
 }
