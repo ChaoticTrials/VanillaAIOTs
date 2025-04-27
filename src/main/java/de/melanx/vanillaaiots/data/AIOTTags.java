@@ -1,6 +1,8 @@
 package de.melanx.vanillaaiots.data;
 
+import com.legacy.lost_aether.data.LCTags;
 import de.melanx.morevanillalib.data.ModTags;
+import de.melanx.vanillaaiots.items.AIOTRegistry;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +36,7 @@ public class AIOTTags extends CommonTagsProviderBase {
                 BlockTags.MINEABLE_WITH_SHOVEL
         );
         this.item(Tags.Items.TOOLS).addTag(TOOLS_AIOTS);
+        this.item(LCTags.Items.PHOENIX_TOOLS).add(AIOTRegistry.phoenixAiot);
     }
 
     @Override

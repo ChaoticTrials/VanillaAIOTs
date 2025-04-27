@@ -1,6 +1,8 @@
 package de.melanx.vanillaaiots.items;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
+import de.melanx.vanillaaiots.compat.aether.AetherAIOTs;
+import de.melanx.vanillaaiots.compat.aether.DeepAetherAIOTs;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.ModList;
@@ -55,9 +57,15 @@ public class AIOTRegistry {
 
     public static Item makeItem(List<String> modids, float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, Item.Properties properties) {
         for (String modid : modids) {
-            if (ModList.get().isLoaded(modid)) {
-                return new BaseAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
+            if (!ModList.get().isLoaded(modid)) {
+                continue;
             }
+
+            return switch (tier) {
+                case SKYROOT, HOLYSTONE, ZANITE, GRAVITITE, VALKYRIE -> AetherAIOTs.getAetherAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
+                case SKYJADE, STRATUS -> DeepAetherAIOTs.getDeepAetherAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
+                default -> new BaseAiot(attackDamageModifier, attackSpeedModifier, tier, properties);
+            };
         }
 
         return new DummyItem(modids);

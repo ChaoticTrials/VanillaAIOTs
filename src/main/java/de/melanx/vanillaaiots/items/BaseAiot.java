@@ -105,7 +105,15 @@ public class BaseAiot extends DiggerItem {
 
     @Override
     public int getBurnTime(@Nonnull ItemStack stack, @Nullable RecipeType<?> recipeType) {
-        return this.getTier() == ToolMaterials.WOODEN ? 400 : 0;
+        if (!(this.getTier() instanceof ToolMaterials tier)) {
+            return 0;
+        }
+
+        return switch (tier) {
+            case WOODEN -> 400;
+            case SKYROOT -> 200;
+            default -> 0;
+        };
     }
 
     public boolean isVanilla() {
