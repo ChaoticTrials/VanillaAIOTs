@@ -21,7 +21,7 @@ public class LibCompat {
         if (Screen.hasShiftDown()) {
             tooltip.add(ComponentUtil.getTooltip("durability", item.getTier().getUses()).withStyle(ChatFormatting.GRAY));
             tooltip.add(ComponentUtil.getTooltip("harvest_level", item.getTier().getLevel()).withStyle(ChatFormatting.GRAY));
-            if (!item.getTier().getRepairIngredient().getItems()[0].is(Items.BARRIER) && item.getTier().getRepairIngredient().getItems().length == 1) {
+            if (item.getTier().getRepairIngredient().getItems().length != 0 && !item.getTier().getRepairIngredient().getItems()[0].is(Items.BARRIER) && item.getTier().getRepairIngredient().getItems().length == 1) {
                 tooltip.add(ComponentUtil.getTooltip("repairing_item", item.getTier().getRepairIngredient().getItems()[0].getItem().getDescription().getString()).withStyle(ChatFormatting.GRAY));
             }
         } else {
