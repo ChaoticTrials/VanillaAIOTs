@@ -1,5 +1,6 @@
 package de.melanx.vanillaaiots.data;
 
+import com.aetherteam.aether.AetherTags;
 import com.legacy.lost_aether.data.LCTags;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.vanillaaiots.items.AIOTRegistry;
@@ -37,6 +38,23 @@ public class AIOTTags extends CommonTagsProviderBase {
         );
         this.item(Tags.Items.TOOLS).addTag(TOOLS_AIOTS);
         this.item(LCTags.Items.PHOENIX_TOOLS).add(AIOTRegistry.phoenixAiot);
+        this.item(AetherTags.Items.GOLDEN_AMBER_HARVESTERS).add(
+                AIOTRegistry.zaniteAiot,
+                AIOTRegistry.gravititeAiot,
+                AIOTRegistry.valkyrieAiot,
+                AIOTRegistry.stratusAiot
+        );
+        this.item(AetherTags.Items.TREATED_AS_AETHER_ITEM).add(
+                AIOTRegistry.skyrootAiot,
+                AIOTRegistry.holystoneAiot,
+                AIOTRegistry.zaniteAiot,
+                AIOTRegistry.gravititeAiot,
+                AIOTRegistry.valkyrieAiot,
+                AIOTRegistry.phoenixAiot,
+                AIOTRegistry.skyjadeAiot,
+                AIOTRegistry.stratusAiot
+        );
+        this.item(AetherTags.Items.SLIDER_DAMAGING_ITEMS).addTag(TOOLS_AIOTS);
     }
 
     @Override
