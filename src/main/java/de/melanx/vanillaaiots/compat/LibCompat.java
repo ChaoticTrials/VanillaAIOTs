@@ -20,7 +20,7 @@ public class LibCompat {
     public static void editHoverText(BaseAiot item, ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
         if (Screen.hasShiftDown()) {
             tooltip.add(ComponentUtil.getTooltip("durability", item.getTier().getUses()).withStyle(ChatFormatting.GRAY));
-            if (!item.getTier().getRepairIngredient().getItems()[0].is(Items.BARRIER) && item.getTier().getRepairIngredient().getItems().length == 1) {
+            if (item.getTier().getRepairIngredient().getItems().length != 0 && !item.getTier().getRepairIngredient().getItems()[0].is(Items.BARRIER) && item.getTier().getRepairIngredient().getItems().length == 1) {
                 tooltip.add(ComponentUtil.getTooltip("repairing_item", item.getTier().getRepairIngredient().getItems()[0].getItem().getDescription().getString()).withStyle(ChatFormatting.GRAY));
             }
         } else {
