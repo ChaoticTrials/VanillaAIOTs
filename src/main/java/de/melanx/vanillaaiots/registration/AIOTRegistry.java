@@ -49,7 +49,7 @@ public class AIOTRegistry {
 
     public static final Item phoenixAiot = AIOTRegistry.makeItem(CompatHelper.AETHER_LOST_CONTENT, ToolMaterials.PHOENIX, new Item.Properties()); // todo adjust damage and speed
 
-    public static final Item skyjadeAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, ToolMaterials.SKYJADE, new Item.Properties(), 1.0F, -2.8F);
+    public static final Item skyjadeAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, ToolMaterials.SKYJADE, new Item.Properties(), 6.0F, -2.8F);
     public static final Item stratusAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, ToolMaterials.STRATUS, new Item.Properties(), 5.0F, -2.8F);
 
     public static Item makeItem(String modid, ToolMaterials tier, Item.Properties properties) {
