@@ -1,11 +1,16 @@
 package de.melanx.vanillaaiots.compat.aether;
 
+import com.aetherteam.aether.item.combat.abilities.weapon.GravititeWeapon;
+import com.aetherteam.aether.item.combat.abilities.weapon.HolystoneWeapon;
+import com.aetherteam.aether.item.combat.abilities.weapon.SkyrootWeapon;
+import com.aetherteam.aether.item.combat.abilities.weapon.ZaniteWeapon;
 import com.aetherteam.aether.item.tools.abilities.*;
 import com.google.common.collect.Multimap;
 import de.melanx.vanillaaiots.items.BaseAiot;
 import de.melanx.vanillaaiots.tools.ToolMaterials;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
@@ -28,28 +33,39 @@ public class AetherAIOTs {
         };
     }
 
-    public static class SkyrootAiot extends BaseAiot implements SkyrootTool {
+    public static class SkyrootAiot extends BaseAiot implements SkyrootTool, SkyrootWeapon {
 
         public SkyrootAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
             super(attackDamageModifier, attackSpeedModifier, tier, properties);
         }
     }
 
-    public static class HolystoneAiot extends BaseAiot implements HolystoneTool {
+    public static class HolystoneAiot extends BaseAiot implements HolystoneTool, HolystoneWeapon {
 
         public HolystoneAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
             super(attackDamageModifier, attackSpeedModifier, tier, properties);
         }
+
+        @Override
+        public boolean hurtEnemy(@Nonnull ItemStack stack, @Nonnull LivingEntity target, @Nonnull LivingEntity attacker) {
+            this.dropAmbrosium(target, attacker);
+            return super.hurtEnemy(stack, target, attacker);
+        }
     }
 
-    public static class ZaniteAiot extends BaseAiot implements ZaniteTool {
+    public static class ZaniteAiot extends BaseAiot implements ZaniteTool, ZaniteWeapon {
 
         public ZaniteAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
             super(attackDamageModifier, attackSpeedModifier, tier, properties);
         }
+
+        @Override
+        public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
+            return this.increaseDamage(super.getAttributeModifiers(slot, stack), stack, slot);
+        }
     }
 
-    public static class GravititeAiot extends BaseAiot implements GravititeTool {
+    public static class GravititeAiot extends BaseAiot implements GravititeTool, GravititeWeapon {
 
         public GravititeAiot(float attackDamageModifier, float attackSpeedModifier, Tier tier, Properties properties) {
             super(attackDamageModifier, attackSpeedModifier, tier, properties);
@@ -59,6 +75,12 @@ public class AetherAIOTs {
         @Override
         public InteractionResult useOn(@Nonnull UseOnContext context) {
             return !this.floatBlock(context) ? super.useOn(context) : InteractionResult.sidedSuccess(context.getLevel().isClientSide());
+        }
+
+        @Override
+        public boolean hurtEnemy(@Nonnull ItemStack stack, @Nonnull LivingEntity target, @Nonnull LivingEntity attacker) {
+            this.launchEntity(target, attacker);
+            return super.hurtEnemy(stack, target, attacker);
         }
     }
 
