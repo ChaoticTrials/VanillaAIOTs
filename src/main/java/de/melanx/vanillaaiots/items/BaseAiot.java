@@ -12,6 +12,8 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
@@ -147,6 +149,15 @@ public class BaseAiot extends DiggerItem {
         }
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);
+    }
+
+    @Override
+    public boolean hurtEnemy(@Nonnull ItemStack stack, @Nonnull LivingEntity target, @Nonnull LivingEntity attacker) {
+        stack.hurtAndBreak(1, attacker, entity -> {
+            entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+        });
+
+        return true;
     }
 
     private static void setHoemode(ItemStack stack, boolean b) {
