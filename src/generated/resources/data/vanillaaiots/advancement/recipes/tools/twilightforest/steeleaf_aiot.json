@@ -1,11 +1,20 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "criterion0": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:wooden_pickaxe"
+            "items": "twilightforest:steeleaf_sword"
           }
         ]
       },
@@ -15,7 +24,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:wooden_axe"
+            "items": "twilightforest:steeleaf_pickaxe"
           }
         ]
       },
@@ -25,7 +34,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:wooden_shovel"
+            "items": "twilightforest:steeleaf_axe"
           }
         ]
       },
@@ -35,7 +44,17 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:wooden_hoe"
+            "items": "twilightforest:steeleaf_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "criterion4": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:steeleaf_hoe"
           }
         ]
       },
@@ -43,7 +62,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vanillaaiots:wooden_aiot"
+        "recipe": "vanillaaiots:twilightforest/steeleaf_aiot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -54,12 +73,13 @@
       "criterion0",
       "criterion1",
       "criterion2",
-      "criterion3"
+      "criterion3",
+      "criterion4"
     ]
   ],
   "rewards": {
     "recipes": [
-      "vanillaaiots:wooden_aiot"
+      "vanillaaiots:twilightforest/steeleaf_aiot"
     ]
   }
 }

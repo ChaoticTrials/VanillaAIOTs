@@ -31,6 +31,9 @@
   "item.vanillaaiots.skyjade_aiot": "Skyjade AIOT",
   "item.vanillaaiots.stratus_aiot": "Stratus AIOT",
 
+  "item.vanillaaiots.steeleaf_aiot": "Steeleaf AIOT",
+  "item.vanillaaiots.ironwood_aiot": "Ironwood AIOT",
+
   "lore.item.vanillaaiots.skyroot_aiot": "Doubles drops from most blocks and mobs, making it an excellent tool for beginners. Despite its low durability, it's perfect for collecting resources when combined with enchantments like Fortune or Looting.",
   "lore.item.vanillaaiots.holystone_aiot": "Mines faster than Skyroot tools and has the chance to drop random Ambrosium Shards during use, whether harvesting blocks or attacking mobs.",
   "lore.item.vanillaaiots.zanite_aiot": "This mid-tier tool starts at iron level efficiency and damage, but as its durability decreases, it becomes faster and stronger - up to twice its original power! Be careful repairing it though, as it will return to its slower, weaker state.",

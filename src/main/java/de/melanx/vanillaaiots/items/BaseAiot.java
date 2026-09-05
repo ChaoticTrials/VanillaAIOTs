@@ -173,7 +173,6 @@ public class BaseAiot extends DiggerItem {
     }
 
     private static boolean isHoemode(ItemStack stack) {
-        Boolean isHoemode = stack.get(ModDataComponentTypes.hoeMode);
-        return isHoemode != null ? isHoemode : false;
+        return stack.getOrDefault(ModDataComponentTypes.hoeMode, false);
     }
 }

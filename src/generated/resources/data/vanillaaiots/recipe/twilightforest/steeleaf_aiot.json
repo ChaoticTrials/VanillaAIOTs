@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    },
+    {
+      "type": "vanillaaiots:vanilla_only"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "twilightforest:steeleaf_sword"
+    },
+    {
+      "item": "twilightforest:steeleaf_pickaxe"
+    },
+    {
+      "item": "twilightforest:steeleaf_axe"
+    },
+    {
+      "item": "twilightforest:steeleaf_shovel"
+    },
+    {
+      "item": "twilightforest:steeleaf_hoe"
+    }
+  ],
+  "result": {
+    "components": {
+      "minecraft:enchantments": {
+        "levels": {
+          "minecraft:efficiency": 3,
+          "minecraft:fortune": 3,
+          "minecraft:looting": 2
+        }
+      }
+    },
+    "count": 1,
+    "id": "vanillaaiots:steeleaf_aiot"
+  }
+}

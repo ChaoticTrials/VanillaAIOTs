@@ -34,6 +34,7 @@ public final class VanillaAIOTs extends ModXRegistration {
 //            system.addDataProvider(AetherLostContentRecipes::new);
             system.addDataProvider(AetherRecipes::new);
             system.addDataProvider(DeepAetherRecipes::new);
+            system.addDataProvider(TwilightForestRecipes::new);
         });
 
         CompatHelper.loadTiers();

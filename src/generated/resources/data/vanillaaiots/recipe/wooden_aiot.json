@@ -7,13 +7,6 @@
       "components": {
         "minecraft:damage": 0
       },
-      "items": "minecraft:wooden_sword"
-    },
-    {
-      "type": "neoforge:components",
-      "components": {
-        "minecraft:damage": 0
-      },
       "items": "minecraft:wooden_pickaxe"
     },
     {

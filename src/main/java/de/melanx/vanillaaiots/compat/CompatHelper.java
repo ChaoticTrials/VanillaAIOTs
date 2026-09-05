@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
 import net.teamsolar.simplest_copper_gear.item.ModToolTiers;
+import twilightforest.util.TFToolMaterials;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -35,6 +36,7 @@ public class CompatHelper {
     public static String AETHER = "aether";
     public static String AETHER_LOST_CONTENT = "lost_aether_content";
     public static String DEEP_AETHER = "deep_aether";
+    public static String TWILIGHT_FOREST = "twilightforest";
     private static final Map<String, Tier> LOADED_TIERS = new HashMap<>();
 
     public static void loadTiers() {
@@ -64,6 +66,12 @@ public class CompatHelper {
             VanillaAIOTs.LOGGER.info("{} is loaded.", DEEP_AETHER);
             LOADED_TIERS.put("skyjade", DATiers.SKYJADE);
             LOADED_TIERS.put("stratus", DATiers.STRATUS);
+        }
+
+        if (ModList.get().isLoaded(TWILIGHT_FOREST)) {
+            VanillaAIOTs.LOGGER.info("{} is loaded.", TWILIGHT_FOREST);
+            LOADED_TIERS.put("ironwood", TFToolMaterials.IRONWOOD);
+            LOADED_TIERS.put("steeleaf", TFToolMaterials.STEELEAF);
         }
 
         if (ModList.get().isLoaded(SIMPLEST_COPPER_GEAR)) {

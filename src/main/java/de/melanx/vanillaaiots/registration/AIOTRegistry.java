@@ -1,6 +1,7 @@
 package de.melanx.vanillaaiots.registration;
 
 import de.melanx.vanillaaiots.compat.CompatHelper;
+import de.melanx.vanillaaiots.compat.TwilightForestAIOTs;
 import de.melanx.vanillaaiots.compat.aether.AetherAIOTs;
 import de.melanx.vanillaaiots.compat.aether.DeepAetherAIOTs;
 import de.melanx.vanillaaiots.items.BaseAiot;
@@ -52,6 +53,9 @@ public class AIOTRegistry {
     public static final Item skyjadeAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, ToolMaterials.SKYJADE, new Item.Properties(), 6.0F, -2.8F);
     public static final Item stratusAiot = AIOTRegistry.makeItem(CompatHelper.DEEP_AETHER, ToolMaterials.STRATUS, new Item.Properties(), 5.0F, -2.8F);
 
+    public static final Item ironwoodAiot = AIOTRegistry.makeItem(CompatHelper.TWILIGHT_FOREST, ToolMaterials.IRONWOOD, new Item.Properties(), 6.0F, -2.8F);
+    public static final Item steeleafAiot = AIOTRegistry.makeItem(CompatHelper.TWILIGHT_FOREST, ToolMaterials.STEELEAF, new Item.Properties(), 5.0F, -2.8F);
+
     public static Item makeItem(String modid, ToolMaterials tier, Item.Properties properties) {
         return AIOTRegistry.makeItem(List.of(modid), tier, properties, BaseAiot.ATTACK_DAMAGE, BaseAiot.ATTACK_SPEED);
     }
@@ -67,13 +71,14 @@ public class AIOTRegistry {
     public static Item makeItem(List<String> modids, ToolMaterials tier, Item.Properties properties, float attackDamage, float attackSpeed) {
         for (String modid : modids) {
             if (!ModList.get().isLoaded(modid)) {
-            continue;
+                continue;
             }
 
             ItemAttributeModifiers attributes = DiggerItem.createAttributes(tier, attackDamage, attackSpeed);
-            return switch (tier) {
+            return switch(tier) {
                 case SKYROOT, HOLYSTONE, ZANITE, GRAVITITE, VALKYRIE -> AetherAIOTs.getAetherAiot(tier, properties, attributes);
                 case SKYJADE, STRATUS -> DeepAetherAIOTs.getDeepAetherAiot(tier, properties, attributes);
+                case IRONWOOD, STEELEAF -> TwilightForestAIOTs.getTwilightForestAiot(tier, properties, attributes);
                 default -> new BaseAiot(tier, properties, attributes);
             };
         }

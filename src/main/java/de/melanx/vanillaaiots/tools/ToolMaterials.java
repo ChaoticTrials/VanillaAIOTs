@@ -51,7 +51,9 @@ public enum ToolMaterials implements Tier {
     PHOENIX("phoenix", () -> Ingredient.EMPTY),
 
     SKYJADE("skyjade", () -> CompatHelper.isLoaded(CompatHelper.DEEP_AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.DEEP_AETHER, "skyjade_repairing", true)) : Ingredient.EMPTY),
-    STRATUS("stratus", () -> CompatHelper.isLoaded(CompatHelper.DEEP_AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.DEEP_AETHER, "stratus_repairing", true)) : Ingredient.EMPTY);
+    STRATUS("stratus", () -> CompatHelper.isLoaded(CompatHelper.DEEP_AETHER) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.DEEP_AETHER, "stratus_repairing", true)) : Ingredient.EMPTY),
+    IRONWOOD("ironwood", () -> CompatHelper.isLoaded(CompatHelper.TWILIGHT_FOREST) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.TWILIGHT_FOREST, "repairs_ironwood_tools", true)) : Ingredient.EMPTY),
+    STEELEAF("steeleaf", () -> CompatHelper.isLoaded(CompatHelper.TWILIGHT_FOREST) ? CompatHelper.getIngredientByIds(new ItemOrTagId(CompatHelper.TWILIGHT_FOREST, "repairs_steeleaf_tools", true)) : Ingredient.EMPTY);
 
     private final ConfigurableMaterial material;
     private final int durability;
